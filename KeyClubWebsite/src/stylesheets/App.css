@@ -1,0 +1,12 @@
+* {
+    overflow-y: hidden;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    z-index: 1;
+}
+
+:root {
+    font-size: clamp(3px, 1vw, 20px);
+}

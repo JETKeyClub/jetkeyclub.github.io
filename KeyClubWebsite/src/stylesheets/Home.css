@@ -1,0 +1,19 @@
+.Banner {
+    display: block;
+    justify-content: center;
+}
+.Banner > img {
+    width: 100%;
+    height: 40rem;
+    object-fit: cover;
+    filter: blur(7px);
+    max-height: 560px;
+}
+
+
+@media (orientation: portrait), (max-width: 540px) {
+    .Banner > img {
+        aspect-ratio: 1/1;
+        height: 60rem;
+    }
+}

@@ -1,0 +1,80 @@
+.headerContainer {
+    z-index: 9999;
+}
+
+
+.header {
+    background-color: #213c5e;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 4rem;
+}
+
+.header > h2 {
+    user-select: none;
+}
+
+.headerOption {
+    color: white;
+    font-size:200%;
+    cursor: pointer;
+    transition: transform 0.2s ease-in;
+    transform-origin: center;
+}
+
+.headerOption:hover {
+    transform: scale(1.2);
+}
+
+.burgerMenuOption {
+    display: none;
+    color: white;
+    font-size: 800%;
+    margin-right: 0.5rem;
+    cursor: pointer;
+
+}
+
+.burgerMenu {
+    position: absolute;
+    top: 10rem;
+    background-color: rgba(33, 60, 94, 0.6);
+    backdrop-filter: blur(3rem);
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+}
+
+.burgerMenu > .headerOption {
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 5rem;
+    
+}
+
+
+@media (orientation: portrait), (max-width: 540px) {
+    .header > .headerOption { 
+        display: none;
+    }
+    .burgerMenuOption {
+        display: block;
+    }
+    .header {
+        justify-content: right;
+        height: 10rem;
+
+    }
+
+    .burgerMenu {
+        display: block;
+    }
+}
