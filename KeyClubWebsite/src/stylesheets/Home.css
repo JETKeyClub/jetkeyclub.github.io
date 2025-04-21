@@ -1,19 +1,28 @@
 .Banner {
     display: block;
     justify-content: center;
-}
-.Banner > img {
+    position: relative; /* Required for pseudo-element positioning */
     width: 100%;
     height: 40rem;
-    object-fit: cover;
-    filter: blur(7px);
     max-height: 560px;
+    overflow: hidden; /* Prevent pseudo-element overflow */
 }
 
-
+.Banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../assets/homeBanner.jpg") no-repeat center center;
+    background-size: cover;
+    filter: blur(10px); /* Apply blur to the background image */
+    z-index: -1; /* Place the pseudo-element behind the content */
+}
 @media (orientation: portrait), (max-width: 540px) {
-    .Banner > img {
-        aspect-ratio: 1/1;
-        height: 60rem;
+    .Banner  {
+        width: 100vw;
+        height: 100vw;
     }
 }
