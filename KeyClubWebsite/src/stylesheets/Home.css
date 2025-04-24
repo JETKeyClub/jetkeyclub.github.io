@@ -1,11 +1,12 @@
 .Banner {
     display: block;
-    justify-content: center;
-    position: relative; /* Required for pseudo-element positioning */
+    text-align: center;
     width: 100%;
     height: 40rem;
     max-height: 560px;
-    overflow: hidden; /* Prevent pseudo-element overflow */
+    overflow: hidden;
+    position: relative;
+    align-content: center;
 }
 
 .Banner::before {
@@ -15,14 +16,48 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("../assets/homeBanner.jpg") no-repeat center center;
+    background: url("../assets/homeBanner.jpg") no-repeat center;
     background-size: cover;
-    filter: blur(10px); /* Apply blur to the background image */
-    z-index: -1; /* Place the pseudo-element behind the content */
+    filter: blur(0.5rem);
+    z-index: -1;
 }
+.Banner > h1 {
+    font-size: 3rem;
+}
+
+.Banner > h3 {
+    font-size: 1.75rem;
+}
+.Banner > img {
+    user-select: none;
+    margin-top: 3rem;
+    width: 25rem;
+    height: 25rem;
+    filter: blur(1px);
+}
+
+
+
+
+
+
 @media (orientation: portrait), (max-width: 540px) {
     .Banner  {
         width: 100vw;
         height: 100vw;
+    }
+
+    .Banner > img {
+        margin-top: 5rem;
+        width: 45rem;
+        height: 45rem;
+    }
+
+    .Banner > h1 {
+        font-size: 7rem;
+    }
+
+    .Banner > h3 {
+        font-size: 3.5rem;
     }
 }

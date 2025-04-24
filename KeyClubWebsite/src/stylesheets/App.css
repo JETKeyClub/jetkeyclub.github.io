@@ -10,3 +10,19 @@
 :root {
     font-size: clamp(3px, 1vw, 20px);
 }
+
+.white {
+    color: white;
+}
+
+.white-bg {
+    background-color: white;
+}
+
+.bannerBlue {
+    color: #213c5e;
+}
+
+.bannerBlue-bg {
+    background-color: #213c5e;
+}

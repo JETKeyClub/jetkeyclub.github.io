@@ -1,16 +1,17 @@
 .headerContainer {
-    z-index: 9999;
+    position: absolute;
+    width: 100vw;
+    z-index: 99999;
 }
 
 
 .header {
-    background-color: #213c5e;
     padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    height: 4rem;
+    height: 3rem;
 }
 
 .header > h2 {
@@ -31,26 +32,17 @@
 
 .burgerMenuOption {
     display: none;
-    color: white;
     font-size: 800%;
     margin-right: 0.5rem;
     cursor: pointer;
-
 }
 
 .burgerMenu {
-    position: absolute;
-    top: 10rem;
-    background-color: rgba(33, 60, 94, 0.6);
-    backdrop-filter: blur(3rem);
+    background-color:  rgba(33, 60, 94, 0.6);
+    backdrop-filter: blur(10px);
     height: 100vh;
-    width: 100vw;
-    display: none;
-    justify-content: center;
-    align-items: center;
-
-    opacity: 0;
-    transition: opacity 0.2s ease-in;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in, visibility 0.2s ease-in;
 }
 
 .burgerMenu > .headerOption {
