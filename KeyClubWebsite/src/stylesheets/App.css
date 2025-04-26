@@ -1,10 +1,17 @@
 * {
-    overflow-y: hidden;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
     z-index: 1;
+}
+
+
+img {
+    width: 45rem;
+    height: 30rem;
+    padding: 3rem;
+    object-fit: cover;
 }
 
 :root {
@@ -25,4 +32,32 @@
 
 .bannerBlue-bg {
     background-color: #213c5e;
+}
+
+.blueAlteration {
+    width: 100vw;
+    padding: 5rem;
+    height: fit-content;
+    background-color: #213c5e;
+}
+
+p {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+h4 {
+    font-size: 3rem;
+}
+
+@media (orientation: portrait), (max-width: 540px) {
+
+    *:not(div) {
+        justify-self: center;
+        text-align: center;
+    }
+
+
 }

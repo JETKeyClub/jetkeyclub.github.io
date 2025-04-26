@@ -14,7 +14,7 @@ export default function Header() {
 
     const [ burgerMenuToggle, setBurgerToggle ] = useState(false);
 
-    return (<div className="headerContainer"><div className="header bannerBlue-bg">
+    return (<header className="headerContainer"><div className="header bannerBlue-bg">
             {getRoutes()}
             {<h2 className="burgerMenuOption white" onClick={ () => {setBurgerToggle(prev => !prev)}}>☰</h2>}
         </div>
@@ -24,7 +24,7 @@ export default function Header() {
             <br></br>
             {getRoutes()}
         </div>
-        </div>);
+        </header>);
 
 
 }
