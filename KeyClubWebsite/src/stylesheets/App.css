@@ -4,6 +4,9 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
     z-index: 1;
+    overflow-x: hidden;
+    white-space: nowrap;
+
 }
 
 
@@ -12,6 +15,13 @@ img {
     height: 30rem;
     padding: 3rem;
     object-fit: cover;
+}
+
+.Page {
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+
 }
 
 :root {
@@ -35,10 +45,13 @@ img {
 }
 
 .blueAlteration {
-    width: 100vw;
+    width: 100%;
     padding: 5rem;
     height: fit-content;
     background-color: #213c5e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 p {
@@ -53,10 +66,8 @@ h4 {
 }
 
 @media (orientation: portrait), (max-width: 540px) {
-
-    *:not(div) {
-        justify-self: center;
-        text-align: center;
+    :root {
+        font-size: clamp(3px, 1.05vw, 20px);
     }
 
 

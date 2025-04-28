@@ -1,12 +1,14 @@
 .Banner {
-    display: block;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
     text-align: center;
-    width: 100%;
+    width: 100vw;
     height: 40rem;
-    max-height: 560px;
-    overflow: hidden;
-    position: relative;
     align-content: center;
+    overflow-x: hidden;
+    width:100%;
+    /* background-color: red; */
 }
 
 .Banner::before {
@@ -15,12 +17,13 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: url("../assets/homeBanner.jpg") no-repeat center;
+    height: 40rem;
+    background: url("../assets/homeBanner.jpg") no-repeat center center;
     background-size: cover;
     filter: blur(0.5rem);
     z-index: -1;
 }
+
 .Banner > h1 {
     font-size: 3rem;
 }
@@ -30,13 +33,39 @@
 }
 .Banner > img {
     user-select: none;
-    margin-top: 3rem;
+    margin-bottom: -3rem;
     width: 25rem;
     height: 25rem;
     filter: blur(1px);
 }
 
+.whatIs {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.whatIs > .textContent {
+    padding-left: 5rem;
+    width: 60rem;
+}
+
+.whatIs > .textContent > p {
+    text-wrap: balance;
+    padding-left: 2rem;
+    text-align: left;
+}
+
+.whatIs > img {
+    width: 45rem;
+    height: 30rem;
+    padding-right: 5rem;
+}
+
+.Home > main > .blueAlteration {
+    gap: 8rem;
+}
 
 
 
@@ -45,6 +74,10 @@
     .Banner  {
         width: 100vw;
         height: 100vw;
+    }
+
+    .Banner::before {
+        height: 90rem;
     }
 
     .Banner > img {
@@ -60,4 +93,36 @@
     .Banner > h3 {
         font-size: 3.5rem;
     }
+
+    .whatIs {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-bottom: 10rem;
+    }
+
+    .whatIs > * {
+        padding: 0;
+        text-align: center;
+    }
+    .whatIs > img {
+        height: 45rem;
+        width: 67.5rem;
+        padding-right: 0;
+    }
+
+    .whatIs > .textContent > h2 {
+        font-size: 6rem;
+    }
+
+
+    .whatIs > .textContent > p {
+        font-size: 3.5rem;
+        text-align: center;
+        padding: 0;
+    }
+
+    .Home > main > .blueAlteration {
+        flex-direction: column;
+    }
+    
 }

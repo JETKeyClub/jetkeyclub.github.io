@@ -7,7 +7,7 @@ import cat from "../assets/cat.jpg";
 
 
 export default function Home() {
-    return <div className="Page">
+    return <div className="Page Home">
         <div className="Banner">
             <img src={keyClubLogo}/>
             <h1 className="white">James E. Taylor Key Club</h1>
@@ -19,9 +19,11 @@ export default function Home() {
                 <h2>What is Key Club?</h2>
                 <p>Our club is a volunteering organization that is focused on leadership, development, and citizenship. It provides opportunities for students to get involved within the school and community.</p>
             </div>
-            <img src={homemain} alt="An image of us attending our dog program."/>
+            <img src={homemain} alt="An image of us attending our dog program." loading="lazy"/>
             </div>
             <div className="blueAlteration">
+                <Card profileImg={cat} quote="Key club is so awesome yo so awesome this is super long textt used ffor testing purposes please work I beg" name="John Doe"/>
+                <Card profileImg={cat} quote="Key club is so awesome yo so awesome this is super long textt used ffor testing purposes please work I beg" name="John Doe"/>
                 <Card profileImg={cat} quote="Key club is so awesome yo so awesome this is super long textt used ffor testing purposes please work I beg" name="John Doe"/>
             </div>
         </main>

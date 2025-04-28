@@ -10,13 +10,22 @@ function getRoutes() {
     })
 }
 
+
+
 export default function Header() {
 
     const [ burgerMenuToggle, setBurgerToggle ] = useState(false);
 
+    function toggleScrolling() {
+        const html = document.querySelector("html");
+        if(html)
+            html.style.overflowY =  burgerMenuToggle ? "auto" : "hidden";
+    }
+
+
     return (<header className="headerContainer"><div className="header bannerBlue-bg">
             {getRoutes()}
-            {<h2 className="burgerMenuOption white" onClick={ () => {setBurgerToggle(prev => !prev)}}>☰</h2>}
+            {<h2 className="burgerMenuOption white" onClick={ () => {setBurgerToggle(prev => !prev); toggleScrolling()}}>☰</h2>}
         </div>
         <div className="burgerMenu" style={{opacity : burgerMenuToggle ? 1 : 0, visibility : burgerMenuToggle ? "visible" : "hidden"}}>
             <br></br>
