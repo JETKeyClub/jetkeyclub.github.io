@@ -67,7 +67,16 @@
     gap: 8rem;
 }
 
+.titleContent {
+    text-align: center;
+}
 
+.opportunityGallery {
+    display: flex;
+    gap: 2rem;
+    flex-direction: row;
+
+}
 
 
 @media (orientation: portrait), (max-width: 540px) {

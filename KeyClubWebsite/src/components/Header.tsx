@@ -23,10 +23,10 @@ export default function Header() {
     }
 
 
-    return (<header className="headerContainer"><div className="header bannerBlue-bg">
+    return (<header className="headerContainer"><nav className="header bannerBlue-bg">
             {getRoutes()}
             {<h2 className="burgerMenuOption white" onClick={ () => {setBurgerToggle(prev => !prev); toggleScrolling()}}>☰</h2>}
-        </div>
+        </nav>
         <div className="burgerMenu" style={{opacity : burgerMenuToggle ? 1 : 0, visibility : burgerMenuToggle ? "visible" : "hidden"}}>
             <br></br>
             <br></br>

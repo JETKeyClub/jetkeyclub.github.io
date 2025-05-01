@@ -54,6 +54,13 @@ img {
     align-items: center;
 }
 
+.whiteAlteration {
+    width: 100%;
+    padding: 5rem;
+    height: fit-content;
+    background-color: white;
+}
+
 p {
     font-size: 2rem;
 }
