@@ -3,6 +3,7 @@ import "../stylesheets/Home.css"
 import keyClubLogo from "../assets/KeyClubLogo.png";
 import homemain from "../assets/homeMain.jpg";
 import cat from "../assets/cat.jpg";
+import guitar from "../assets/guitar.png";
 
 //Components
 import Card from "./Card";
@@ -35,6 +36,14 @@ export default function Home() {
                 </div>
                 <section className="opportunityGallery">
                     <Opportunity image={homemain} details="something fun im guessing thats really cool and that's cool like very awesome yea thats nice yes yes yes very long text"/>
+                    <Opportunity image={cat} details="placeholder text for placeholder for placeholder"/>
+                    <Opportunity image={guitar} details="placeholder text for placeholder for placeholder"/>
+                    <Opportunity image={homemain} details="something fun im guessing thats really cool and that's cool like very awesome yea thats nice yes yes yes very long text"/>
+                    <Opportunity image={cat} details="placeholder text for placeholder for placeholder"/>
+                    <Opportunity image={guitar} details="placeholder text for placeholder for placeholder"/>
+                    <Opportunity image={homemain} details="something fun im guessing thats really cool and that's cool like very awesome yea thats nice yes yes yes very long text"/>
+                    <Opportunity image={cat} details="placeholder text for placeholder for placeholder"/>
+                    <Opportunity image={guitar} details="placeholder text for placeholder for placeholder"/>
                 </section>
             </section>
         
