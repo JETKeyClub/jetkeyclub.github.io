@@ -5,6 +5,8 @@ interface Props {
     className?:string | ""
     id?:string | ""
     alt?:string| ""
+    width?:string| ""
+    height?:string| ""
 
 }
 

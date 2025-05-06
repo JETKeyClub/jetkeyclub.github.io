@@ -5,5 +5,5 @@ import { imgProps } from "./BaseImage";
 import "../../stylesheets/SuspenseImage.css"
 
 export default function SuspenseImage(props: imgProps){
-    return (<div className={`suspenseImage ${props.className}`} id={props.id}><Suspense fallback={<div className= "loading"/>}><BaseImage src={props.src} alt={props.alt}/></Suspense></div>)
+    return (<div style={props.width!= null || props.width != "" ? { width: props.width, height: props.height} : {}} className={`suspenseImage ${props.className}`} id={props.id}><Suspense fallback={<div className= "loading"/>}><BaseImage src={props.src} alt={props.alt}/></Suspense></div>)
 }

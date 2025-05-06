@@ -1,6 +1,6 @@
 import { Suspense, useEffect, useMemo, useState } from "react";
 import "../stylesheets/Opportunity.css"
-import CreateResource from "./Resource";
+import { CreateResource } from "./Resource.ts";
 
 interface Props {
     image: string,
