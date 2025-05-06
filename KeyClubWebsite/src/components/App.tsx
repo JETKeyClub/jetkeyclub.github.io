@@ -2,14 +2,16 @@ import Header from "./Header"
 import "../stylesheets/App.css"
 
 import Home from "./Home"
-import { Suspense } from "react"
-
+import SuspenseImage from "./SuspenseImage/SuspenseImage";
+import testImage from "../assets/cat.jpg";
+import { Suspense } from "react";
 function App() {
 
-  return <Suspense fallback={<h1> Loading </h1>}>
-    <Header/>
-    <Home/>
-  </Suspense>
+  return (
+    <div>
+      <SuspenseImage src={testImage}/>
+    </div>
+  );
 }
 
 export default App

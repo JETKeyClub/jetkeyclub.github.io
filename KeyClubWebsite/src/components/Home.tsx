@@ -1,13 +1,14 @@
 import "../stylesheets/Home.css"
 //Assets
 import keyClubLogo from "../assets/KeyClubLogo.png";
-import homemain from "../assets/homeMain.jpg";
+import homemain from "../assets/homeMain.webp";
 import cat from "../assets/cat.jpg";
 import guitar from "../assets/guitar.png";
 
 //Components
 import Card from "./Card";
 import Opportunity from "./Opportunity";
+import { Suspense } from "react";
 
 export default function Home() {
     return <div className="Page Home">
@@ -35,16 +36,21 @@ export default function Home() {
                     <p>Hover over the images for details!</p>
                 </div>
                 <section className="opportunityGallery">
-                    <Opportunity image={homemain} details="something fun im guessing thats really cool and that's cool like very awesome yea thats nice yes yes yes very long text"/>
-                    <Opportunity image={cat} details="placeholder text for placeholder for placeholder"/>
-                    <Opportunity image={guitar} details="placeholder text for placeholder for placeholder"/>
-                    <Opportunity image={homemain} details="something fun im guessing thats really cool and that's cool like very awesome yea thats nice yes yes yes very long text"/>
-                    <Opportunity image={cat} details="placeholder text for placeholder for placeholder"/>
-                    <Opportunity image={guitar} details="placeholder text for placeholder for placeholder"/>
-                    <Opportunity image={homemain} details="something fun im guessing thats really cool and that's cool like very awesome yea thats nice yes yes yes very long text"/>
-                    <Opportunity image={cat} details="placeholder text for placeholder for placeholder"/>
-                    <Opportunity image={guitar} details="placeholder text for placeholder for placeholder"/>
+                    <Suspense fallback={<p>Loading...</p>}>
+                    <Opportunity image={homemain} details='test'/>
+                    </Suspense>
                 </section>
+                {/* <section className="opportunityGallery">
+                    <Opportunity image={homemain} details="something fun im guessing thats really cool and that's cool like very awesome yea thats nice yes yes yes very long text"/>
+                    <Opportunity image={cat} details="placeholder text for placeholder for placeholder"/>
+                    <Opportunity image={guitar} details="placeholder text for placeholder for placeholder"/>
+                    <Opportunity image={homemain} details="something fun im guessing thats really cool and that's cool like very awesome yea thats nice yes yes yes very long text"/>
+                    <Opportunity image={cat} details="placeholder text for placeholder for placeholder"/>
+                    <Opportunity image={guitar} details="placeholder text for placeholder for placeholder"/>
+                    <Opportunity image={homemain} details="something fun im guessing thats really cool and that's cool like very awesome yea thats nice yes yes yes very long text"/>
+                    <Opportunity image={cat} details="placeholder text for placeholder for placeholder"/>
+                    <Opportunity image={guitar} details="placeholder text for placeholder for placeholder"/>
+                </section> */}
             </section>
         
         </main>
