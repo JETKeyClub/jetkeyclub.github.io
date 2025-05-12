@@ -7,13 +7,14 @@ interface Props {
 
 
 import "../stylesheets/Card.css";
+import SuspenseImage from "./SuspenseImage/SuspenseImage";
 
 
 
 export default function Card( { profileImg, name, quote }: Props ){
 
     return (<div className="Card">
-        <img src={profileImg} alt={`An image of ${name}.`} loading="lazy"/>
+        <SuspenseImage src={profileImg} alt={`An image of ${name}.`}/>
         <blockquote className="box">
             <p>"{quote}"</p>
             <h4>- {name}</h4>

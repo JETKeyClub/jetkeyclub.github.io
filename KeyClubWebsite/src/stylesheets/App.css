@@ -10,7 +10,7 @@
 }
 
 
-img {
+img, .suspenseImage {
     width: 45rem;
     height: 30rem;
     padding: 3rem;

@@ -29,8 +29,9 @@ function getImageFromCache(image: string): HTMLImageElement{
 }
 
 export default function BaseImage({ src, className, id, alt} : Props){
-    return <img src={getImageFromCache(src).src} className={className} id={id} alt={alt}/>;
+    return <img src={getImageFromCache(src).src} className={className} id={id} alt={alt} loading="lazy"/>;
   
 }
 
 export type imgProps = Props;
+export {getImageFromCache}

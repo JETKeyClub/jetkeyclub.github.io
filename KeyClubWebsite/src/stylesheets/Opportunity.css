@@ -1,34 +1,35 @@
 .Opportunity {
-    position: relative;
-    overflow: hidden;
-    width: 100% !important;
-    height: auto !important;
-    object-fit: cover;
-    float: left;
 
-    margin: 0;
-    padding: 0;
+    object-fit: cover;
+    flex: 1 1 auto;
+    
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
 }
 
-.Opportunity.vertical {
-    grid-row: span 2 / auto;
-    grid-column: span 2 / auto;
+/* .Opportunity.tall {
+    grid-row: 2 / span ;
+    grid-column: 1 / auto ;
 }
 
 .Opportunity.wide {
-    grid-row: 2 / span auto;
-    grid-column: 2 span / auto;
-}
+    grid-row: 1 / auto ;
+    grid-column: 2 / span;
+} */
 
 
 
-.Opportunity  > img {
-    background-color: red;
-    width: 100%;
+.Opportunity  > .suspenseImage {
     height: 100%;
+    width: 100%;
     padding: 0;
     transition: filter 0.25s ease-in;
     position: relative;
+    vertical-align: middle;
+    object-fit: cover;
 }
 
 .Opportunity > p {
@@ -41,7 +42,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 5%;
+    padding: 10%;
 
     font-size: 150%;
     overflow-wrap: break-word;
@@ -52,7 +53,7 @@
     transition: opacity 0.23s linear;
 }
 
-.Opportunity:hover > img {
+.Opportunity:hover > .suspenseImage {
     filter: blur(0.3rem);
 }
 

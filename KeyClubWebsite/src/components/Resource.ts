@@ -3,22 +3,26 @@ interface resource<T> {
 }
 
 function CreateResource<T>(promise: Promise<T>): resource<T> {
-    let status: string = "pending";
-    let result : any;
+    let status: "pending" | "success" | "failed" = "pending";
+    let result : T;
 
-    const suspender = promise.then((res) => {
+    const suspender = promise.then(
+        
+        (res) => {
             status = "success";
             result = res;
         },
         (err) => {
             status = "failed";
             result = err;
+        
         }
     )
     return { read(): T{
-        if(status=="pending")
+
+        if(status==="pending")
             throw suspender;
-        else if(status == "failed")
+        else if(status === "failed")
             throw result;
         
         return result;
