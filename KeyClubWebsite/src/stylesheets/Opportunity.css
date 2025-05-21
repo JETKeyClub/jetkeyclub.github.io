@@ -1,7 +1,8 @@
 .Opportunity {
 
     overflow: hidden;
-    height: 5rem;
+    height: 10rem;
+    width: auto;
     flex: auto;
     position: relative;
 }

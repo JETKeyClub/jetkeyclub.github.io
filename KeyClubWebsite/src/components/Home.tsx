@@ -20,7 +20,7 @@ export default function Home() {
             <h3 className="white">Helping our community since 2011</h3>
         </div>
         <main className="main">
-            <div className="whatIs">
+            <div className="textSubdivision">
             <div className="textContent">
                 <h2>What is Key Club?</h2>
                 <p>Our club is a volunteering organization that is focused on leadership, development, and citizenship. It provides opportunities for students to get involved within the school and community.</p>

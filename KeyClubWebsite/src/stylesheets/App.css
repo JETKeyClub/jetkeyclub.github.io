@@ -81,3 +81,69 @@ h4 {
 
 
 }
+
+
+.textSubdivision {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.textSubdivision > .textContent {
+    padding-left: 5rem;
+    width: 60rem;
+}
+
+.textSubdivision > .textContent > p {
+    text-wrap: balance;
+    padding-left: 2rem;
+    text-align: left;
+}
+
+
+.textSubdivision > .textContent > h2 {
+    font-size: 3.5rem;
+    text-align: center;
+    padding: 0;
+}
+
+.textSubdivision > .suspenseImage {
+    width: 60rem;
+    height: 30rem;
+    padding-right: 3rem;
+    object-fit: cover;
+    max-width: 90vw;
+}
+
+@media (orientation: portrait) , (max-width: 500px) {
+    .textSubdivision {
+        padding-top: 10rem;
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-bottom: 10rem;
+    }
+
+    .textSubdivision > * {
+        padding: 0;
+        text-align: center;
+    }
+    .textSubdivision > .suspenseImage {
+        height: 45rem;
+        width: 67.5rem;
+        padding: 0;
+    }
+
+    .textSubdivision > .textContent > h2 {
+        font-size: 6rem;
+    }
+
+
+    .textSubdivision > .textContent > p {
+        font-size: 3.5rem;
+        text-align: center;
+        padding: 0;
+    }
+    
+}

@@ -43,33 +43,7 @@
     margin-top: 5rem;
 }
 
-.whatIs {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    /* flex-wrap: wrap; */
-}
 
-.whatIs > .textContent {
-    padding-left: 5rem;
-    width: 60rem;
-}
-
-.whatIs > .textContent > p {
-    text-wrap: balance;
-    padding-left: 2rem;
-    text-align: left;
-}
-
-.whatIs > img {
-    width: 45rem;
-    height: 30rem;
-    padding-right: 5rem;
-    object-fit: cover;
-    max-width: 90vw;
-}
 
 .Home > main > .blueAlteration {
     gap: 8rem;
@@ -116,34 +90,6 @@
 
     .Banner > h3 {
         font-size: 3.5rem;
-    }
-
-    .whatIs {
-        padding-top: 10rem;
-        flex-direction: column-reverse;
-        text-align: center;
-        padding-bottom: 10rem;
-    }
-
-    .whatIs > * {
-        padding: 0;
-        text-align: center;
-    }
-    .whatIs > img {
-        height: 45rem;
-        width: 67.5rem;
-        padding: 0;
-    }
-
-    .whatIs > .textContent > h2 {
-        font-size: 6rem;
-    }
-
-
-    .whatIs > .textContent > p {
-        font-size: 3.5rem;
-        text-align: center;
-        padding: 0;
     }
 
     .Home > main > .blueAlteration {
