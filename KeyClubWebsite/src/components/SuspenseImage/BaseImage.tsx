@@ -7,7 +7,7 @@ interface Props {
     alt?:string| ""
     width?:string| ""
     height?:string| ""
-
+    onClick?:()=>void | null
 }
 
 const imageCache: { [key : string]: resource<HTMLImageElement>} = {};

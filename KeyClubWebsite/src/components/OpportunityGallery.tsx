@@ -7,14 +7,14 @@ interface Props {
 }
 
 export default function OpportunityGallery(props: Props){
-    return <ul className="opportunityGallery">
+    return <div className="opportunityGallery">
         
         {Children.map(props.children, (child, idx)=>{
-            return <li key={idx}>{child}</li>
+            return child;
         })}
 
 
 
-    </ul>
+    </div>
 
 }

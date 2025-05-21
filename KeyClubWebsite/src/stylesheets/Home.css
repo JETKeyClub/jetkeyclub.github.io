@@ -1,13 +1,15 @@
 .Banner {
     padding: 0;
     margin: 0;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    align-items: center;
     width: 100vw;
     height: 40rem;
     align-content: center;
     overflow-x: hidden;
-    width:100%;
+    position: relative;
     /* background-color: red; */
 }
 
@@ -37,6 +39,8 @@
     width: 25rem;
     height: 25rem;
     filter: blur(1px);
+    z-index: 1;
+    margin-top: 5rem;
 }
 
 .whatIs {
@@ -44,6 +48,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
+    /* flex-wrap: wrap; */
 }
 
 .whatIs > .textContent {
@@ -61,10 +67,13 @@
     width: 45rem;
     height: 30rem;
     padding-right: 5rem;
+    object-fit: cover;
+    max-width: 90vw;
 }
 
 .Home > main > .blueAlteration {
     gap: 8rem;
+    flex-wrap: wrap;
 }
 
 .titleContent {
@@ -74,25 +83,29 @@
 .opportunityGallery
 {
     padding-top: 3rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 2rem;
     list-style: none;
+    width: 100%;
+    justify-items: center;
 }
 
 
-@media (orientation: portrait), (max-width: 540px) {
+@media (orientation: portrait) , (max-width: 500px) {
     .Banner  {
         width: 100vw;
-        height: 100vw;
+        height: fit-content;
+        padding-bottom: 5rem;
+   
     }
 
     .Banner::before {
-        height: 90rem;
+        height: 100%;
     }
 
     .Banner > img {
-        margin-top: 5rem;
+        margin-top: 10rem;
         width: 45rem;
         height: 45rem;
     }
@@ -106,6 +119,7 @@
     }
 
     .whatIs {
+        padding-top: 10rem;
         flex-direction: column-reverse;
         text-align: center;
         padding-bottom: 10rem;
@@ -118,7 +132,7 @@
     .whatIs > img {
         height: 45rem;
         width: 67.5rem;
-        padding-right: 0;
+        padding: 0;
     }
 
     .whatIs > .textContent > h2 {

@@ -55,10 +55,17 @@
 }
 
 .Card {
+    height: fit-content;
     text-align: center;
 }
 
 @media (orientation: portrait), (max-width: 540px) {
+    
+    .Card {
+        padding : 0;
+        height: fit-content;
+    }
+
     .Card > .box {
         height: 33rem;
 

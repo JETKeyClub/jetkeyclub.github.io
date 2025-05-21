@@ -27,7 +27,7 @@ img, .suspenseImage {
 }
 
 :root {
-    font-size: clamp(3px, 1vw, 20px);
+    font-size: clamp(3px, 1.20vw, 40px);
 }
 
 .white {
@@ -74,7 +74,7 @@ h4 {
     font-size: 3rem;
 }
 
-@media (orientation: portrait), (max-width: 540px) {
+@media (orientation: portrait) , (max-width: 500px) {
     :root {
         font-size: clamp(3px, 1.05vw, 20px);
     }

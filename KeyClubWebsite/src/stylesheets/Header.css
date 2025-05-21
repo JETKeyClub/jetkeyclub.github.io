@@ -60,7 +60,7 @@
 }
 
 
-@media (orientation: portrait), (max-width: 540px) {
+@media (orientation: portrait),(max-width: 500px) {
     .header > .headerOption { 
         display: none;
     }

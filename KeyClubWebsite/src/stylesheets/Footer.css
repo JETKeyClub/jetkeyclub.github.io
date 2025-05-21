@@ -1,0 +1,23 @@
+footer {
+    display: flex;
+    padding: 3rem;
+    gap: 3rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+footer > .suspenseImage {
+    width: 8rem;
+    height: 8rem;
+    
+    border-radius: 150%;
+    border: 0.1rem solid black;
+    padding: 0;
+    transition: 0.2s linear;
+
+}
+
+footer > .suspenseImage:hover {
+    transform: scale(1.2);
+}
