@@ -3,13 +3,14 @@ import "../stylesheets/App.css"
 
 import Home from "./Home"
 import Footer, { currentSocials } from "./Footer";
+import AboutUs from "./AboutUs";
 
 function App() {
 
   return (
     <>
     <Header/>
-    <Home/>
+    <AboutUs/>
     <Footer/>
     </>
   );

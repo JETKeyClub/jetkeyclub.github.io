@@ -98,14 +98,14 @@ h4 {
 
 .textSubdivision > .textContent > p {
     text-wrap: balance;
-    padding-left: 2rem;
     text-align: left;
+    padding-left: 2rem;
 }
 
 
 .textSubdivision > .textContent > h2 {
     font-size: 3.5rem;
-    text-align: center;
+    text-align: left;
     padding: 0;
 }
 
