@@ -1,18 +1,32 @@
-import { useState } from "react"
+import { JSX, ReactNode, useState } from "react"
 
 import "../stylesheets/Header.css"
+import Home from "./Home"
+import AboutUs from "./AboutUs";
 
-const routes : string[] = ["Home", "About", "Officers", "Gallery", "Contact"]
+interface route {
+    name: string,
+    actualRouting: JSX.Element
+}
 
-function getRoutes() {
-    return routes.map((el, idx) => {
-        return <h2 className="headerOption white" key={idx}>{el}</h2>
-    })
+const routes : {[name: string]: JSX.Element} = {
+    "Home" : <Home/>,
+    "About Us" : <AboutUs/>
 }
 
 
+function getRoutes(changePage: Function) {
+    return Object.entries(routes).map(([name, routing]) => {
+        return <h2 className="headerOption white" key={name} onClick={()=>{changePage(routing)}}>{name}</h2>
+    })
+}
 
-export default function Header() {
+interface Props {
+    changePage: Function
+}
+
+
+export default function Header({changePage}: Props) {
 
     const [ burgerMenuToggle, setBurgerToggle ] = useState(false);
 
@@ -24,16 +38,18 @@ export default function Header() {
 
 
     return (<header className="headerContainer"><nav className="header bannerBlue-bg">
-            {getRoutes()}
+            {getRoutes(changePage)}
             {<h2 className="burgerMenuOption white" onClick={ () => {setBurgerToggle(prev => !prev); toggleScrolling()}}>☰</h2>}
         </nav>
         <div className="burgerMenu" style={{opacity : burgerMenuToggle ? 1 : 0, visibility : burgerMenuToggle ? "visible" : "hidden"}}>
             <br></br>
             <br></br>
             <br></br>
-            {getRoutes()}
+            {getRoutes(changePage)}
         </div>
         </header>);
 
 
 }
+
+export {routes}

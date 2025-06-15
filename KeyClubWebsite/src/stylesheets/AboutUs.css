@@ -1,0 +1,30 @@
+.pledge.textSubdivision {
+    justify-content: left;
+}
+
+.pledge > .textContent {
+    padding: 0;
+}
+
+.pledge > .textContent > * {
+    width: 100%;
+    overflow:unset;
+    color: white;
+}
+
+.pledge > .textContent > p {
+    font-style: italic;
+}
+
+@media (orientation: portrait) , (max-width: 500px) {
+    .pledge.textSubdivision {
+        flex-direction: column;
+        justify-content: left;
+    }       
+
+    .pledge.textSubdivision > .textContent > * {
+        width: 100%;
+        overflow:unset;
+        text-align: left;
+    }
+}
