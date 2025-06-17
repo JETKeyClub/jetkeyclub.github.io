@@ -1,4 +1,4 @@
-.Card > .suspenseImage {
+.Card > .suspenseImage, .OfficerCard > .suspenseImage {
     padding: 0;
     width: 15rem;
     height: 15rem;

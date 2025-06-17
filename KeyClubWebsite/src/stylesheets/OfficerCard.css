@@ -1,0 +1,41 @@
+.OfficerCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.OfficerCard > .suspenseImage {
+    width: 10rem;
+    height: 10rem;
+    border-width: 0.5rem;
+    position: relative;
+    top: 5rem;
+    z-index: 2;
+}
+
+.OfficerCard > div {
+    font-size: 2rem;
+    text-align: center;
+    border: 0.4rem solid #213c5e;
+    border-radius: 3rem;
+    width: 20rem;
+    padding: 1rem;
+    padding-top: 5rem;
+    margin: auto;
+}
+
+.OfficerCard > div > h4 {
+    font-size: 100%;
+}
+
+.OfficerCard > div > h3 {
+    font-size: 80%;
+}
+
+.OfficerCard > div > p {
+    font-size: 75%;
+    word-wrap: break-word;
+    text-wrap: wrap;
+}
+
+

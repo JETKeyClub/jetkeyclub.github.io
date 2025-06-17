@@ -1,14 +1,28 @@
 import Header from "./Header"
 import "../stylesheets/App.css"
-
-import Home from "./Home"
 import Footer, { currentSocials } from "./Footer";
-import AboutUs from "./AboutUs";
-import { JSX, useState } from "react";
+import { JSX, useEffect, useState } from "react";
+
+import { routes, reverseRoutes } from "./Routes";
+
+import { useSearchParams, useNavigate } from "react-router-dom";
+
+
 
 function App() {
 
-  const [usePage, setPage] = useState(<Home/>)
+  const [params] = useSearchParams();
+  const page = params.get("page")?.replace("%20"," ");
+
+  console.log(params)
+
+  const navigate = useNavigate();
+
+  const [usePage, setPage] = useState(routes[page || "Home"]);
+
+  useEffect(()=>{
+    navigate(`?page=${reverseRoutes.get(usePage)}`);
+  }, [usePage]);
 
   return (
     <>
@@ -18,5 +32,7 @@ function App() {
     </>
   );
 }
+
+
 
 export default App
