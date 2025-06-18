@@ -3,8 +3,7 @@ import SuspenseImage from "./SuspenseImage/SuspenseImage";
 import insta from "../assets/Instagram_icon.png"
 
 const currentSocials: Map<string, string[]> = new Map<string, string[]>();
-currentSocials.set("Instagram", ["https://www.instagram.com", insta]);
-currentSocials.set("Istagram", ["https://www.instagram.com", insta]);
+currentSocials.set("Instagram", ["https://www.instagram.com/ths_key_club/", insta]);
 const redidrect = (link: string) : void => {
     window.open(link, "_blank");
 }

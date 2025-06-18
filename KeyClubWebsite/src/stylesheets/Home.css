@@ -33,7 +33,7 @@
 .Banner > h3 {
     font-size: 1.75rem;
 }
-.Banner > img {
+.Banner > .suspenseImage {
     user-select: none;
     margin-bottom: -3rem;
     width: 25rem;

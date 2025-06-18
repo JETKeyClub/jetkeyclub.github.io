@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Krishna",
+        "role": "President",
+        "bio": "Hi, I'm Krishna, the President of Key Club. I'm of Indian descent. I enjoy watching shows and trying different kinds of food."
+    },
+    {
+        "name": "Sophia Tang",
+        "role": "Vice President",
+        "bio" : "My name is Sophia. I'm a rising senior and the Vice President of Key Club. I'm excited for Walk to End Alzheimers and all the fundraisers we are going to do. I'm involved in Orchestra outside of Key Club. In my free time I like to play pickleball and read fantasy novels. My favorite food is sushi and my favorite book series is Harry Potter. "
+    },
+    {
+        "name": "Jaiden Khosla",
+        "role": "Webmaster",
+        "bio" : "Hi, my name is Jaiden. I'm a Sophmore and Webmaster of Key Club. I enjoy programming, playing videogames, and practicing guitar in my free time. I'm very excited for this year and all the things we as a club are going to do."
+    }
+]

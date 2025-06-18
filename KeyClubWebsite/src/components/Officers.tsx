@@ -1,9 +1,8 @@
 import OfficerCard from "./OfficerCard";
 
-import cat from "../assets/cat.jpg"
+import officerJSON from "../assets/Officers/OfficerBios.json" assert { type: 'json'}
+
 
 export default function Officers(){
-    return <>
-        <OfficerCard name="Jaiden Khosla" icon={cat} role="Webmaster" bio="I hate HTML.I hate HTML.I hate HTML.I hate HTML.I hate HTML.I hate HTML.I hate HTML.I hate HTML.I hate HTML.I hate HTML.I hate HTML.I hate HTML."/>
-    </>
+    {}    
 }
