@@ -33,7 +33,7 @@ export default function Header({changePage}: Props) {
             {getRoutes(changePage, setBurgerToggle)}
             {<h2 className="burgerMenuOption white" onClick={ () => {setBurgerToggle(prev => !prev);}}>☰</h2>}
         </nav>
-        <div className="burgerMenu" style={{opacity : burgerMenuToggle ? 1 : 0, visibility : burgerMenuToggle ? "visible" : "hidden"}}>
+        <div className="burgerMenu" style={{opacity : burgerMenuToggle ? 1 : 0, visibility : burgerMenuToggle ? "visible" : "hidden", pointerEvents: burgerMenuToggle ? "unset" : "none"}}>
             <br></br>
             <br></br>
             <br></br>

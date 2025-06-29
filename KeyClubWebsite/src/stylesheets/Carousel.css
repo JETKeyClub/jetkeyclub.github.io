@@ -1,0 +1,39 @@
+div.Carousel {
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+    row-gap: 3rem;
+}
+
+div.Carousel > div.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+div.Carousel > div.buttons > button {
+    width: 5rem;
+    height: 5rem;
+    background-color: #5271ff;
+    color: white;
+    font-size: 300%;
+    border-radius: 55%;
+    border: none;
+    cursor: pointer;
+}
+
+
+div.Carousel > div.content {
+    display: flex;
+    gap: 3rem;
+    align-items: stretch;
+    justify-content: center;
+}
+
+@media (orientation: portrait) , (max-width: 500px) {
+    div.Carousel > div.buttons > button {
+        width: 10rem;
+        height: 10rem;
+        font-size: 500%;
+    }
+}

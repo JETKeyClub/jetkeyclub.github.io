@@ -5,9 +5,9 @@
 }
 
 .OfficerCard > .suspenseImage {
-    width: 10rem;
-    height: 10rem;
-    border-width: 0.5rem;
+    width: 13rem;
+    height: 13rem;
+    border-width: 0.75rem;
     position: relative;
     top: 5rem;
     z-index: 2;
@@ -16,26 +16,48 @@
 .OfficerCard > div {
     font-size: 2rem;
     text-align: center;
-    border: 0.4rem solid #213c5e;
+    border: 0.75rem solid #213c5e;
     border-radius: 3rem;
     width: 20rem;
     padding: 1rem;
     padding-top: 5rem;
     margin: auto;
+    height: 40rem;
+
 }
 
 .OfficerCard > div > h4 {
-    font-size: 100%;
+    font-size: 90%;
+    justify-self: center;
+    max-width: fit-content;
 }
 
 .OfficerCard > div > h3 {
-    font-size: 80%;
+    font-size: 75%;
 }
 
 .OfficerCard > div > p {
-    font-size: 75%;
+    font-size: 60%;
     word-wrap: break-word;
     text-wrap: wrap;
 }
 
 
+@media (orientation: portrait) , (max-width: 500px) {
+    .OfficerCard > .suspenseImage {
+        width: 20rem;
+        height: 20rem;
+    }
+    .OfficerCard > div {
+    font-size: 3rem;
+    text-align: center;
+    border: 0.75rem solid #213c5e;
+    border-radius: 3rem;
+    width: 30rem;
+    padding: 1rem;
+    padding-top: 5rem;
+    margin: auto;
+    height: 60rem;
+    }
+
+}

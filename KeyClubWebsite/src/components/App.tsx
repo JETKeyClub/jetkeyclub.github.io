@@ -14,15 +14,13 @@ function App() {
   const [params] = useSearchParams();
   const page = params.get("page")?.replace("%20"," ");
 
-  console.log(params)
-
   const navigate = useNavigate();
 
   const [usePage, setPage] = useState(routes[page || "Home"]);
 
-  useEffect(()=>{
-    navigate(`?page=${reverseRoutes.get(usePage)}`);
-  }, [usePage]);
+  // useEffect(()=>{
+  //   navigate(`?page=${reverseRoutes.get(usePage)}`);
+  // }, [usePage]);
 
   return (
     <>
