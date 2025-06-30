@@ -15,7 +15,7 @@ import { Suspense } from "react";
 export default function Home() {
     return <div className="Page Home">
         <div className="Banner">
-            <SuspenseImage src={keyClubLogo}/>
+            <img src={keyClubLogo}/>
             <h1 className="white">James E. Taylor Key Club</h1>
             <h3 className="white">Helping our community since 2011</h3>
         </div>
@@ -27,7 +27,7 @@ export default function Home() {
             </div>
             <SuspenseImage src={homemain} alt="An image of us attending our dog program."/>
             </div>
-            <section className="blueAlteration">
+            <section className="blueAlteration cardHolder">
                 <Card profileImg={cat} quote="Key club is so awesome yo so awesome this is super long textt used ffor testing purposes please work I beg" name="John Doe"/>
                 <Card profileImg={cat} quote="Key club is so awesome yo so awesome this is super long textt used ffor testing purposes please work I beg" name="John Doe"/>
                 <Card profileImg={cat} quote="Key club is so awesome yo so awesome this is super long textt used ffor testing purposes please work I beg" name="John Doe"/>

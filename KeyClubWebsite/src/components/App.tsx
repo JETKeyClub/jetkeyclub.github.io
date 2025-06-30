@@ -18,9 +18,9 @@ function App() {
 
   const [usePage, setPage] = useState(routes[page || "Home"]);
 
-  // useEffect(()=>{
-  //   navigate(`?page=${reverseRoutes.get(usePage)}`);
-  // }, [usePage]);
+  useEffect(()=>{
+    navigate(`?page=${reverseRoutes.get(usePage)}`);
+  }, [usePage]);
 
   return (
     <>

@@ -88,18 +88,19 @@ h4 {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    padding: 5rem;
+    padding: 2rem;
 }
 
 .textSubdivision > .textContent {
-    padding-left: 5rem;
-    width: 60rem;
+    padding-left: 2rem;
+    width: 70rem;
 }
 
 .textSubdivision > .textContent > p , .textSubdivision > .textContent > li  {
-    text-wrap: balance;
+    text-wrap: wrap;
     text-align: left;
     padding-left: 2rem;
+    font-size: 150%;
 }
 .textSubdivision > .textContent > li {
     font-size: 150%;
@@ -113,14 +114,19 @@ h4 {
 }
 
 .textSubdivision > .suspenseImage {
-    width: 60rem;
+    width: 82rem;
     height: 36rem;
-    padding-right: 3rem;
+    padding-right: 0rem;
     object-fit: cover;
-    max-width: 90vw;
+    max-width: 95vw;
 }
 
 @media (orientation: portrait) , (max-width: 500px) {
+
+    .cardHolder {
+        flex-direction: column;
+    }
+
     .textSubdivision {
         padding-top: 10rem;
         flex-direction: column-reverse;

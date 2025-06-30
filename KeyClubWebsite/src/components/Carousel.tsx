@@ -30,20 +30,20 @@ export default function Carousel({children}: Props) {
         
         for(let i = startPoint; i < startPoint+maxPerSlide; i++)
             copy.push(range[i%range.length]);
-        console.log(copy)
+
         return copy;
     }
 
 
     return <div className="Carousel">
+        
+        <button onClick={()=>{rotateLeft()}}>←</button>
         <div className="content">
             {circSlice(useStartPoint).map((item, idx)=>{
                 return <div key={idx}>{item}</div>
             })}
         </div>
-        <div className="buttons">
-            <button onClick={()=>{rotateLeft()}}>→</button>
-            <button onClick={()=>{rotateRight()}}>→</button>
-        </div>
+        <button onClick={()=>{rotateRight()}}>→</button>
+        
     </div>
 }

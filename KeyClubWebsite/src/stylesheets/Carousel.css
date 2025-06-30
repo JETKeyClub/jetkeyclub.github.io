@@ -1,17 +1,21 @@
 div.Carousel {
-    display: flex;
-    flex-direction: column;    
+    display: flex;    
     justify-content: center;
-    row-gap: 3rem;
+    align-items: center;
+    gap: 1rem;
 }
 
-div.Carousel > div.buttons{
+/* div.Carousel > div.buttons{
     display: flex;
     justify-content: center;
     gap: 3rem;
+} */
+
+.Page.Officers > .whiteAlteration {
+    padding: 2rem;
 }
 
-div.Carousel > div.buttons > button {
+div.Carousel > button {
     width: 5rem;
     height: 5rem;
     background-color: #5271ff;
@@ -20,8 +24,12 @@ div.Carousel > div.buttons > button {
     border-radius: 55%;
     border: none;
     cursor: pointer;
+    transition: transform 0.175s linear;
 }
 
+div.Carousel > div.buttons > button:hover {
+    transform: scale(1.25);
+}
 
 div.Carousel > div.content {
     display: flex;
@@ -32,8 +40,8 @@ div.Carousel > div.content {
 
 @media (orientation: portrait) , (max-width: 500px) {
     div.Carousel > div.buttons > button {
-        width: 10rem;
-        height: 10rem;
+        width: 7rem;
+        height: 7rem;
         font-size: 500%;
     }
 }
