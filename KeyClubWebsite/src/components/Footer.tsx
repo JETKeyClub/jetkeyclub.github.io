@@ -1,6 +1,6 @@
 import "../stylesheets/Footer.css";
 import SuspenseImage from "./SuspenseImage/SuspenseImage";
-import insta from "../assets/Instagram_icon.png"
+import insta from "../assets/Instagram_icon.webp"
 
 const currentSocials: Map<string, string[]> = new Map<string, string[]>();
 currentSocials.set("Instagram", ["https://www.instagram.com/ths_key_club/", insta]);

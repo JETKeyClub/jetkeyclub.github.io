@@ -1,9 +1,9 @@
 import "../stylesheets/Home.css"
 //Assets
-import keyClubLogo from "../assets/KeyClubLogo.png";
+import keyClubLogo from "../assets/KeyClubLogo.webp";
 import homemain from "../assets/homeMain.webp";
-import cat from "../assets/cat.jpg";
-import guitar from "../assets/guitar.png";
+import cat from "../assets/cat.webp";
+import guitar from "../assets/guitar.webp";
 
 //Components
 import Card from "./Card";
@@ -15,7 +15,7 @@ import { Suspense } from "react";
 export default function Home() {
     return <div className="Page Home">
         <div className="Banner">
-            <img src={keyClubLogo} alt="Key Club Logo"/>
+            <img src={keyClubLogo} alt="Key Club Logo" fetchPriority="high"/>
             <h1 className="white">James E. Taylor Key Club</h1>
             <h3 className="white">Helping our community since 2011</h3>
         </div>

@@ -3,24 +3,24 @@
         "name": "Krishna Srinivasan",
         "role": "President",
         "bio": "Hi, I'm Krishna, the President of Key Club. I'm of Indian descent. I enjoy watching shows and trying different kinds of food.",
-        "image" : "/assets/Officers/OfficerPictures/KrishnaSrinivasan.jpg"
+        "image" : "/assets/Officers/OfficerPictures/KrishnaSrinivasan.webp"
     },
     {
         "name": "Sophia Tang",
         "role": "Vice President",
         "bio" : "My name is Sophia. I'm a rising senior and the Vice President of Key Club. I'm excited for Walk to End Alzheimers and all the fundraisers we are going to do. I'm involved in Orchestra outside of Key Club. In my free time I like to play pickleball and read fantasy novels. My favorite food is sushi and my favorite book series is Harry Potter.",
-        "image" : "/assets/Officers/OfficerPictures/SophiaTang.jpg"
+        "image" : "/assets/Officers/OfficerPictures/SophiaTang.webp"
     },
     {
         "name": "Jaiden Khosla",
         "role": "Webmaster",
         "bio" : "Hi, my name is Jaiden. I'm a Sophomore and the Webmaster for Key Club. I enjoy programming, listening to music, and practicing guitar in my free time. I'm very excited for this year and all the things we as a club are going to do.",
-        "image": "/assets/Officers/OfficerPictures/JaidenKhosla.jpg"
+        "image": "/assets/Officers/OfficerPictures/JaidenKhosla.webp"
     },
     {
         "name": "Ariella Ko",
         "role": "Reporter",
         "bio": "Hi! I'm Ariella, a rising sophomore and one of the Key Club editors! I love volunteering, whether it's with little kids at my Korean school or helping out at the food bank. I enjoy drawing, watching tv, and listening to music. I'm super excited for this years Key Club activites!",
-        "image" : "/assets/Officers/OfficerPictures/AriellaKo.jpg"
+        "image" : "/assets/Officers/OfficerPictures/AriellaKo.webp"
     }
 ]

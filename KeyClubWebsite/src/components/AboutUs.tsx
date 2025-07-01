@@ -2,7 +2,7 @@ import SuspenseImage from "./SuspenseImage/SuspenseImage"
 
 import "../stylesheets/App.css"
 import "../stylesheets/AboutUs.css"
-import AboutUsImage from "../assets/aboutUsImage.jpg";
+import AboutUsImage from "../assets/aboutUsImage.webp";
 
 const objectives: string[] = [
     "To develop initiative and leadership.",
