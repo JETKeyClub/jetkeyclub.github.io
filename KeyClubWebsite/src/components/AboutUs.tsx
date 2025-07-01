@@ -43,7 +43,9 @@ export default function AboutUs()
             <div className="textSubdivision">
                 <div className="textContent objectives">
                     <h2>Objectives</h2>
-                    {objectives.map((el)=>{return <li>{el}</li>})}
+                    <ul>
+                        {objectives.map((el, idx)=>{return <li key={`Objective#${idx}`}>{el}</li>})}
+                    </ul>
                 </div>
             </div>
         </div>

@@ -99,15 +99,17 @@ h4 {
     width: 60rem;
 }
 
-.textSubdivision > .textContent > p , .textSubdivision > .textContent > li  {
+.textSubdivision > .textContent > p , .textSubdivision > .textContent > ul> li  {
     text-wrap: wrap;
     text-align: left;
     padding-left: 2rem;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
 }
-.textSubdivision > .textContent > li {
-    font-size: 2.5rem;
+
+.textSubdivision > .textContent > ul > li {
+    padding: 0;
 }
+
 
 
 .textSubdivision > .textContent > h2 {

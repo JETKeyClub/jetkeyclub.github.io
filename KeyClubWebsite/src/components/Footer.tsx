@@ -15,9 +15,9 @@ interface Props {
 export default function Footer({socials}: Props){
     if(socials==null) socials = currentSocials;
     return <footer className="bannerBlue-bg">
-        {Array.from(socials.keys()).map((key, _)=>{
+        {Array.from(socials.keys()).map((key, idx)=>{
             const [ link, imgLink ]: string[] = socials.get(key)!;
-            return <SuspenseImage src={imgLink} alt={`Link to our ${key}`} onClick={()=>redidrect(link)}/>;
+            return <SuspenseImage src={imgLink} alt={`Link to our ${key}`} key={`${key}-link`} onClick={()=>redidrect(link)}/>;
         })}
     </footer>
 }
