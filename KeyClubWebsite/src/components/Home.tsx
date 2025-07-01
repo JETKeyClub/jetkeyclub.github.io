@@ -15,7 +15,7 @@ import { Suspense } from "react";
 export default function Home() {
     return <div className="Page Home">
         <div className="Banner">
-            <img src={keyClubLogo}/>
+            <img src={keyClubLogo} alt="Key Club Logo"/>
             <h1 className="white">James E. Taylor Key Club</h1>
             <h3 className="white">Helping our community since 2011</h3>
         </div>

@@ -18,11 +18,11 @@
     text-align: center;
     border: 0.75rem solid #213c5e;
     border-radius: 3rem;
-    width: 20rem;
+    width: 25rem;
     padding: 1rem;
     padding-top: 5rem;
     margin: auto;
-    height: 30rem;
+    height: 40rem;
 
 }
 
@@ -37,7 +37,7 @@
 }
 
 .OfficerCard > div > p {
-    font-size: 50%;
+    font-size: 70%;
     word-wrap: break-word;
     text-wrap: wrap;
 }

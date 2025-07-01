@@ -27,7 +27,7 @@ function minimize(image: HTMLImageElement): [number[], HTMLImageElement] {
 export default function Opportunity({ image, details }: Props){
     const [ dimensions, loadedImage ] = minimize(getDetails(image));
     return (<div className={`Opportunity ${dimensions[0] > dimensions[1] ? "wide" : "tall"}`} style={{width : `${dimensions[0]}em`, height : `${dimensions[1]}em`}}>
-        <SuspenseImage src={loadedImage.src}/>
+        <SuspenseImage src={loadedImage.src} alt={`Opportunity: ${details}`}/>
         <p>{details}</p>
     </div>);   
 }

@@ -4,6 +4,8 @@ import OfficerCarousel from "./Carousel";
 import Carousel from "./Carousel";
 import officerJSON from "../assets/Officers/OfficerBios.json"
 
+import "../stylesheets/Officers.css"
+
 export default function Officers(){
     return <div className="Page Officers">
         <div className="whiteAlteration">
