@@ -1,15 +1,15 @@
-import "../stylesheets/Home.css"
+import "../../stylesheets/Home.css"
 //Assets
-import keyClubLogo from "../assets/KeyClubLogo.webp";
-import homemain from "../assets/homeMain.webp";
-import cat from "../assets/cat.webp";
-import guitar from "../assets/guitar.webp";
+import keyClubLogo from "../../assets/KeyClubLogo.webp";
+import homemain from "../../assets/homeMain.webp";
+import cat from "../../assets/cat.webp";
+import guitar from "../../assets/guitar.webp";
 
 //Components
-import Card from "./Card";
-import Opportunity from "./Opportunity";
-import SuspenseImage from "./SuspenseImage/SuspenseImage";
-import OpportunityGallery from "./OpportunityGallery";
+import Card from "../otherComponents/All/Card";
+import Opportunity from "../otherComponents/All/Opportunity";
+import SuspenseImage from "../SuspenseImage/SuspenseImage";
+import OpportunityGallery from "../otherComponents/All/OpportunityGallery";
 import { Suspense } from "react";
 
 export default function Home() {
@@ -34,7 +34,7 @@ export default function Home() {
             </section>
             <section className="whiteAlteration">
                 <div className="titleContent">
-                    <h2>Opportunities</h2>
+                    <h2>Big Opportunities</h2>
                     <p>Hover over the images for details!</p>
                 </div>
                 <OpportunityGallery>

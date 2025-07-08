@@ -1,5 +1,5 @@
 import React, { ReactNode, Children } from "react";
-import "../stylesheets/OpportunityGallery.css";
+import "../../../stylesheets/OpportunityGallery.css";
 
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 export default function OpportunityGallery(props: Props){
     return <div className="opportunityGallery">
         
-        {Children.map(props.children, (child, idx)=>{
+        {Children.map(props.children, (child, _)=>{
             return child;
         })}
 

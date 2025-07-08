@@ -1,22 +1,26 @@
-import {CreateResource, resource } from "../Resource";
+import { useEffect } from "react";
+import {CreateResource, resource } from "./Resource";
 
+//Props for Base Image
 interface Props {
-    src: string
-    className?:string | ""
-    id?:string | ""
-    alt?:string| ""
-    width?:string| ""
-    height?:string| ""
-    onClick?:()=>void | null
+    src: string //the pathway to the desired image
+    className?:string | "" //gives a desired html class to base image
+    id?:string | ""          //gives a desired html id to base image
+    alt?:string| ""         //gives a desired alt to base image
+    width?:string| ""       //gives a desired width to base image
+    height?:string| ""      //gives a desired height to base image
+    onClick?:()=>void | null    //gives a desired onClick Event to base image
 }
 
+
+//This is for optimal image loading. Please don't mess with this.
 const imageCache: { [key : string]: resource<HTMLImageElement>} = {};
 
 function generateImage(image: string): Promise<HTMLImageElement>{
-    return new Promise<HTMLImageElement>(resolve=>{
+    return new Promise<HTMLImageElement>((resolve, reject)=>{
         const img: HTMLImageElement = new Image();
         img.src = image;
-        img.onload = () => resolve(img);
+        img.onload = () => img.decode().then(()=> resolve(img)).catch(reject)
     });
 }
 
@@ -28,8 +32,14 @@ function getImageFromCache(image: string): HTMLImageElement{
     return imageCache[image].read();
 }
 
+//Base Image
 export default function BaseImage({ src, className, id, alt} : Props){
-    return <img src={getImageFromCache(src).src} className={className} id={id} alt={alt} loading="lazy"/>;
+
+    useEffect(()=>{
+        getImageFromCache(src);
+    }, [src])
+
+    return <img src={getImageFromCache(src).src} className={className} id={id} alt={alt} loading="lazy" decoding="async"/>;
   
 }
 

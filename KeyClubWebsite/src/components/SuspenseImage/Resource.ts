@@ -1,10 +1,12 @@
 interface resource<T> {
     read : () => T
 }
+//This is for Suspense Image. I wouldn't mess with this unless you really know what you are doing.
 
 function CreateResource<T>(promise: Promise<T>): resource<T> {
     let status: "pending" | "success" | "failed" = "pending";
     let result : T;
+    let error: any;
 
     const suspender = promise.then(
         
@@ -14,7 +16,7 @@ function CreateResource<T>(promise: Promise<T>): resource<T> {
         },
         (err) => {
             status = "failed";
-            result = err;
+            error = err;
         
         }
     )
@@ -23,7 +25,7 @@ function CreateResource<T>(promise: Promise<T>): resource<T> {
         if(status==="pending")
             throw suspender;
         else if(status === "failed")
-            throw result;
+            throw error;
         
         return result;
 

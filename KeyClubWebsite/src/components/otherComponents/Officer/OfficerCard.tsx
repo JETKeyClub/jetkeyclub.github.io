@@ -1,7 +1,7 @@
-import "../stylesheets/OfficerCard.css"
-import "../stylesheets/Card.css"
+import "../../../stylesheets/OfficerCard.css"
+import "../../../stylesheets/Card.css"
 
-import SuspenseImage from "./SuspenseImage/SuspenseImage"
+import SuspenseImage from "../../SuspenseImage/SuspenseImage"
 
 interface Props {
     name: string,

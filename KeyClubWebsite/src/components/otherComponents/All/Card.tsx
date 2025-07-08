@@ -1,4 +1,4 @@
-
+//Props for the Card Component
 interface Props {
     profileImg: string,
     name: string,
@@ -6,8 +6,8 @@ interface Props {
 }
 
 
-import "../stylesheets/Card.css";
-import SuspenseImage from "./SuspenseImage/SuspenseImage";
+import "../../../stylesheets/Card.css";
+import SuspenseImage from "../../SuspenseImage/SuspenseImage";
 
 
 

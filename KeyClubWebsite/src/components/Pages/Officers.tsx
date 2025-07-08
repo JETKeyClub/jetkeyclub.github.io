@@ -1,10 +1,10 @@
-import OfficerCard from "./OfficerCard";
-import OfficerCarousel from "./Carousel";
+import OfficerCard from "../otherComponents/Officer/OfficerCard";
+import OfficerCarousel from "../otherComponents/All/Carousel";
 
-import Carousel from "./Carousel";
-import officerJSON from "../assets/Officers/OfficerBios.json"
+import Carousel from "../otherComponents/All/Carousel";
+import officerJSON from "../../assets/Officers/OfficerBios.json"
 
-import "../stylesheets/Officers.css"
+import "../../stylesheets/Officers.css"
 
 export default function Officers(){
     return <div className="Page Officers">

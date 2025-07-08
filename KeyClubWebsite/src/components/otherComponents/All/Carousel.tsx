@@ -1,5 +1,5 @@
 import React, { JSX, useState } from "react";
-import "../stylesheets/Carousel.css"
+import "../../../stylesheets/Carousel.css"
 
 interface Props {
     children?: React.ReactNode;
@@ -7,12 +7,13 @@ interface Props {
 
 export default function Carousel({children}: Props) {
 
+    //converts all the elements within the Carousel component into a usable array.
     const range = React.Children.toArray(children);
 
 
 
     const [useStartPoint, setStartPoint] = useState(0);
-    const maxPerSlide = 3;
+    const maxPerSlide = 3; //how many items are shown at a time
 
 
 
@@ -24,6 +25,7 @@ export default function Carousel({children}: Props) {
         setStartPoint(point => (point+1)%range.length);
     }
 
+    //slices the array into the visible officers
     const circSlice = (startPoint: number): React.ReactNode[] => {
 
         const copy: React.ReactNode[] = [];

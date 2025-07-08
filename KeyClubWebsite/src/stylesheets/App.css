@@ -1,3 +1,17 @@
+:root {
+    font-size: clamp(3px, 1vw, 40px);
+}
+
+
+@media (orientation: portrait) , (max-width: 500px) {
+    :root {
+        font-size: clamp(3px, 1.05vw, 20px);
+    }
+
+
+}
+
+
 * {
     padding: 0;
     margin: 0;
@@ -27,9 +41,6 @@ img, .suspenseImage {
 
 }
 
-:root {
-    font-size: clamp(3px, 1.20vw, 40px);
-}
 
 .white {
     color: white;
@@ -75,14 +86,6 @@ h4 {
     font-size: 3rem;
 }
 
-@media (orientation: portrait) , (max-width: 500px) {
-    :root {
-        font-size: clamp(3px, 1.05vw, 20px);
-    }
-
-
-}
-
 
 .textSubdivision {
     width: 100%;
@@ -96,18 +99,20 @@ h4 {
 
 .textSubdivision > .textContent {
     padding-left: 2rem;
-    width: 60rem;
+    flex: 1 1 50rem;
+    max-width: 67rem;
 }
 
 .textSubdivision > .textContent > p , .textSubdivision > .textContent > ul> li  {
     text-wrap: wrap;
     text-align: left;
     padding-left: 2rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .textSubdivision > .textContent > ul > li {
     padding: 0;
+    font-size: 3rem;
 }
 
 
