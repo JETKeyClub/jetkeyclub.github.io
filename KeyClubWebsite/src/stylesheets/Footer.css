@@ -12,8 +12,8 @@ footer {
 }
 
 footer > .suspenseImage {
-    width: 7.5rem;
-    height: 7.5rem;
+    width: 5.5rem;
+    height: 5.5rem;
     
     border-radius: 150%;
     border: 0.1rem solid black;

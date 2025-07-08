@@ -5,8 +5,8 @@
 }
 
 .OfficerCard > .suspenseImage {
-    width: 13rem;
-    height: 13rem;
+    width: 10rem;
+    height: 10rem;
     border-width: 0.75rem;
     position: relative;
     top: 5rem;
@@ -14,7 +14,7 @@
 }
 
 .OfficerCard > div {
-    font-size: 2rem;
+    font-size: 1.7rem;
     text-align: center;
     border: 0.75rem solid #213c5e;
     border-radius: 3rem;
@@ -22,7 +22,7 @@
     padding: 1rem;
     padding-top: 5rem;
     margin: auto;
-    height: 40rem;
+    height: 32rem;
 
 }
 

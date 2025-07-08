@@ -27,8 +27,8 @@ div.Carousel > button {
     transition: transform 0.175s linear;
 }
 
-div.Carousel > div.buttons > button:hover {
-    transform: scale(1.25);
+div.Carousel > button:hover {
+    transform: scale(1.05);
 }
 
 div.Carousel > div.content {

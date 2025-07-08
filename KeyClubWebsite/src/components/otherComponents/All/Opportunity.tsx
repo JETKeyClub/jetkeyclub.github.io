@@ -11,7 +11,7 @@ function getDetails(image: string): HTMLImageElement {
     return getImageFromCache(image)
 }
 
-const wanted_height = 40; //the desired height of all opportunities (IN REM)
+const wanted_height = 30; //the desired height of all opportunities (IN REM)
 
 //scales the image dimensions from (w,h) to (w', wanted_height). It's just scalar division.
 function minimize(image: HTMLImageElement): [number[], HTMLImageElement] {

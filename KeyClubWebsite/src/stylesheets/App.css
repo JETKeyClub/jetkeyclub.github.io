@@ -110,9 +110,11 @@ h4 {
     font-size: 2rem;
 }
 
+
+
 .textSubdivision > .textContent > ul > li {
-    padding: 0;
-    font-size: 3rem;
+    padding-left: 0;
+    font-size: 1.75rem;
 }
 
 
