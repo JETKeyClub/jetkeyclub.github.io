@@ -36,10 +36,11 @@ function getImageFromCache(image: string): HTMLImageElement{
 export default function BaseImage({ src, className, id, alt} : Props){
 
     useEffect(()=>{
-        getImageFromCache(src);
+        const img = new Image();
+        img.src = src;
     }, [src])
 
-    return <img src={getImageFromCache(src).src} className={className} id={id} alt={alt} loading="lazy" decoding="async"/>;
+    return <img src={src} className={className} id={id} alt={alt} loading="lazy" decoding="async"/>;
   
 }
 
