@@ -1,14 +1,11 @@
 import { getImageFromCache } from "../../SuspenseImage/BaseImage";
 import "../../../stylesheets/Opportunity.css";
 import SuspenseImage from "../../SuspenseImage/SuspenseImage";
+import { useEffect, useState } from "react";
 
 interface Props {
     image: string
     details: string //the description of the opportunity
-}
-
-function getDetails(image: string): HTMLImageElement {
-    return getImageFromCache(image)
 }
 
 const wanted_height = 30; //the desired height of all opportunities (IN REM)
@@ -25,9 +22,18 @@ function minimize(image: HTMLImageElement): [number[], HTMLImageElement] {
 
 
 export default function Opportunity({ image, details }: Props){
-    const [ dimensions, loadedImage ] = minimize(getDetails(image));
-    return (<div className={`Opportunity ${dimensions[0] > dimensions[1] ? "wide" : "tall"}`} style={{width : `${dimensions[0]}rem`, height : `${dimensions[1]}rem`}}>
-        <SuspenseImage src={loadedImage.src} alt={`Opportunity: ${details}`}/>
+    const [getDetails, setDetails] = useState<[number[], HTMLImageElement]|null>(null);
+
+    useEffect(()=>{
+        (async () => {
+            getImageFromCache(image).then((loadedImg)=>{
+                setDetails(minimize(loadedImg))
+            });
+        })();
+    }, [image])
+
+    return <>{ getDetails != null && <div className={`Opportunity ${getDetails[0][0] > getDetails[0][1] ? "wide" : "tall"}`} style={{width : `${getDetails[0][0]}rem`, height : `${getDetails![0][1]}rem`}}>
+        <SuspenseImage src={getDetails[1].src} alt={`Opportunity: ${details}`}/>
         <p>{details}</p>
-    </div>);   
+    </div>}</>;   
 }
