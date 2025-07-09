@@ -3,12 +3,14 @@ import { JSX } from "react";
 import Home from "../../Pages/Home";
 import AboutUs from "../../Pages/AboutUs";
 import Officers from "../../Pages/Officers";
+import Gallery from "../../Pages/Gallery";
 
 //All the different pages on the website
 const routes : {[name: string]: JSX.Element} = {
     "Home" : <Home/>,
     "About Us" : <AboutUs/>,
-    "Officers" : <Officers/>
+    "Officers" : <Officers/>,
+    "Gallery" : <Gallery/>
 };
 
 //Page -> Page Name

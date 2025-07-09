@@ -6,6 +6,7 @@ import { JSX, useEffect, useState } from "react";
 import { routes, reverseRoutes } from "../otherComponents/All/Routes";
 
 import { useSearchParams, useNavigate } from "react-router-dom";
+import Gallery from "./Gallery";
 
 
 
