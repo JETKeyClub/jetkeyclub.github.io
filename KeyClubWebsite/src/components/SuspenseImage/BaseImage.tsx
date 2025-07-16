@@ -57,7 +57,7 @@ export default function BaseImage({ src, className, id, alt} : Props){
 
     }, [src])
 
-    return <img src={loadedSrc||src} className={className} id={id} alt={alt} loading="lazy" decoding="async"/>;
+    return <img src={loadedSrc||src} className={className} id={id} alt={alt} loading="eager" decoding="async"/>;
   
 }
 

@@ -22,5 +22,11 @@
         "role": "Reporter",
         "bio": "Hi! I'm Ariella, a rising sophomore and one of the Key Club editors! I love volunteering, whether it's with little kids at my Korean school or helping out at the food bank. I enjoy drawing, watching tv, and listening to music. I'm super excited for this years Key Club activites!",
         "image" : "/assets/Officers/OfficerPictures/AriellaKo.webp"
+    },
+    {
+        "name": "Aaron Schmidt",
+        "role": "Treasurer",
+        "bio": "Hi. My name is Aaron Schmid. I am going into my senior year. I am the treasurer of Key Club. In my spare time I like to swim and play pickleball with my friends.",
+        "image": "/assets/Officers/OfficerPictures/AaronSchmid.webp"
     }
 ]
