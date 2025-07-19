@@ -3,14 +3,14 @@ import "../../stylesheets/Home.css"
 import keyClubLogo from "../../assets/KeyClubLogo.webp";
 import homemain from "../../assets/homeMain.webp";
 //Review Images (Placeholders for now)
-import JaidenKhosla from "../../../public/assets/Officers/OfficerPictures/JaidenKhosla.webp"
-import SophiaTang from "../../../public/assets/Officers/OfficerPictures/SophiaTang.webp"
+import JaidenKhosla from "../../assets/Officers/OfficerPictures/JaidenKhosla.webp"
+import SophiaTang from "../..//assets/Officers/OfficerPictures/SophiaTang.webp"
 import NicholasLovely from "../../assets/nicholas_lovely.png"
 
 //Big Opportunities
-import WalkToEndAlzheimers from "../../../public/assets/Opportunities/OpportunityPictures/WalkToEndAlzheimers.webp"
-import MuttsAndMeows from "../../../public/assets/Opportunities/OpportunityPictures/MuttsAndMeows.webp"
-import BakeSale from "../../../public/assets/Opportunities/OpportunityPictures/BakeSale.webp"
+import WalkToEndAlzheimers from "../../assets/Opportunities/OpportunityPictures/WalkToEndAlzheimers.webp"
+import MuttsAndMeows from "../../assets/Opportunities/OpportunityPictures/MuttsAndMeows.webp"
+import BakeSale from "../../assets/Opportunities/OpportunityPictures/BakeSale.webp"
 
 //Components
 import Card from "../otherComponents/All/Card";

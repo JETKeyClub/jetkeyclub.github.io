@@ -2,7 +2,7 @@ import { JSX, ReactNode, useEffect, useState } from "react"
 
 import "../../../stylesheets/Header.css"
 
-import { routes } from "./Routes.tsx"
+import { routes } from "./Routes"
 
 //gets all the different pages from the file, routes.ts
 function getRoutes(changePage: Function, toggleBurger: Function) {
