@@ -28,5 +28,11 @@
         "role": "Treasurer",
         "bio": "Hi. My name is Aaron Schmid. I am going into my senior year. I am the treasurer of Key Club. In my spare time I like to swim and play pickleball with my friends.",
         "image": "/assets/Officers/OfficerPictures/AaronSchmid.webp"
+    },
+    {
+        "name": "Sophia Veracoechea",
+        "role" : "Secretary",
+        "bio" : "Hi, I'm Sophia Veracoechea and I am going to be your co-secretary this year! I'm going into my junior year here at THS where I hope we all create everlasting memories from our volunteering opportunities. I like to hangout with friends, go to the gym, or just cozy up with a good book. I'm hopeful for an amazing year here in Key Club and that a lot of people will join us.",
+        "image": "/assets/Officers/OfficerPictures/SophiaVeracoechea.webp"
     }
 ]
