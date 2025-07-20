@@ -1,26 +1,26 @@
 [
     {
-        "image": "/src/assets/Opportunities/OpportunityPictures/WalkToEndAlzheimers.webp",
+        "image": "Opportunities/OpportunityPictures/WalkToEndAlzheimers.webp",
         "description": "Walk to End Alzheimers is one of our bigger opportunities where we run to raise money for Alzheimers reasearch."
     },
     {
-        "image": "/src/assets/Opportunities/OpportunityPictures/TrashBash.webp",
+        "image": "Opportunities/OpportunityPictures/TrashBash.webp",
         "description": "Trash Bash was an older event we used to hold where we used to go around public places such as playgrounds and clean them up."
     },
     {
-        "image": "/src/assets/Opportunities/OpportunityPictures/MuttsAndMeows.webp",
+        "image": "Opportunities/OpportunityPictures/MuttsAndMeows.webp",
         "description": "Mutts and Meows is an organization that helps care for stray cats and dogs while trying to find them homes."
     },
     {
-        "image": "/src/assets/Opportunities/OpportunityPictures/PeepsMarathon.webp",
+        "image": "Opportunities/OpportunityPictures/PeepsMarathon.webp",
         "description": "Running with My Peeps is an event held in the spring where anyone can come and run a marathon. We help by setting up, handing out water during the event, and cleaning up."
     },
     {
-        "image": "/src/assets/Opportunities/OpportunityPictures/BakeSale.webp",
+        "image": "Opportunities/OpportunityPictures/BakeSale.webp",
         "description": "We hold several bake sales throughout the year to raise money for LEDCON. They mainly consist of home baked goods."
     },
     {
-        "image": "/src/assets/Opportunities/OpportunityPictures/PieSocial.webp",
+        "image": "Opportunities/OpportunityPictures/PieSocial.webp",
         "description": "At the end of the year we hold a pie social where we pie the previous officers and the upcoming officers."
     }
 

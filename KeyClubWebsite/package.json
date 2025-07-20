@@ -3,14 +3,14 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "homepage": "https://james-e-taylor-key-club.github.io/KeyClubWebsite",
+  "homepage": "https://james-e-taylor-key-club.github.io/KeyClubWebsite/KeyClubWebsite",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy" : "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "keyclubwebsite": "file:",

@@ -9,7 +9,7 @@ export default function Gallery(){
         <br/>
         <br/>
         <OpportunityGallery>
-            {OpportunityJSON.map((opportunity, idx)=>{
+            {OpportunityJSON.map((opportunity, _)=>{
                 return <Opportunity image={opportunity["image"] || "../../assets/homeMain.webp"} details={opportunity["description"] || "Fun times"}/>
             })}
         </OpportunityGallery>

@@ -1,5 +1,5 @@
-import { JSX, useEffect, useState } from "react";
-import { Helmet, HelmetData } from "react-helmet";
+import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useSearchParams, useNavigate } from "react-router-dom";
 
 import Header from "../otherComponents/All/Header"

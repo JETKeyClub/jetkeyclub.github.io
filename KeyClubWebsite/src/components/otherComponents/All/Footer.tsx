@@ -17,7 +17,7 @@ const redidrect = (link: string) : void => {
 export default function Footer(){
 
     return <footer className="bannerBlue-bg">
-        {Object.keys(socials).map((key, idx)=>{
+        {Object.keys(socials).map((key, _)=>{
             const [ link, imgLink ]: string[] = socials[key]!;
             return <SuspenseImage src={imgLink} alt={`Link to our ${key}`} key={`${key}-link`} onClick={()=>redidrect(link)}/>;
         })}

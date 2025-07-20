@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {CreateResource, resource } from "./Resource";
+//import {CreateResource, resource } from "./Resource";
 
 //Props for Base Image
 interface Props {

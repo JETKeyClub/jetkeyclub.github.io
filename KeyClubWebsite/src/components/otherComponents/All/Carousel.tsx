@@ -1,4 +1,4 @@
-import React, { JSX, useState } from "react";
+import React, { useState } from "react";
 import "../../../stylesheets/Carousel.css"
 
 interface Props {

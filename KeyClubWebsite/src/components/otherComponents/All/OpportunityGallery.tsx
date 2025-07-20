@@ -1,4 +1,4 @@
-import React, { ReactNode, Children } from "react";
+import { ReactNode, Children } from "react";
 import "../../../stylesheets/OpportunityGallery.css";
 
 

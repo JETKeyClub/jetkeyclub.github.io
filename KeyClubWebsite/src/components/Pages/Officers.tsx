@@ -1,6 +1,4 @@
 import OfficerCard from "../otherComponents/Officer/OfficerCard";
-import OfficerCarousel from "../otherComponents/All/Carousel";
-
 import Carousel from "../otherComponents/All/Carousel";
 import officerJSON from "../../assets/Officers/OfficerBios.json"
 
@@ -10,7 +8,7 @@ export default function Officers(){
     return <div className="Page Officers">
         <div className="whiteAlteration">
             <Carousel>
-                {officerJSON.map(({ name, role, bio, image}, idx) => {
+                {officerJSON.map(({ name, role, bio, image}, _) => {
                     return <OfficerCard name={name} role={role} bio={bio} icon={image}/>
                 })}
             </Carousel>
