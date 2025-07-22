@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "homepage": "https://JETKeyClub.github.io/JETKeyClub.github.io",
+  "homepage": "https://JETKeyClub.github.io/KeyClubWebsite",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
