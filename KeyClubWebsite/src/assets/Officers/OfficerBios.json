@@ -12,16 +12,16 @@
         "image" : "Officers/OfficerPictures/SophiaTang.webp"
     },
     {
-        "name": "Jaiden Khosla",
-        "role": "Webmaster",
-        "bio" : "Hi, my name is Jaiden. I'm a Sophomore and the Webmaster for Key Club. I enjoy programming, listening to music, and practicing guitar in my free time. I'm very excited for this year and all the things we as a club are going to do.",
-        "image": "Officers/OfficerPictures/JaidenKhosla.webp"
+        "name": "Sophia Veracoechea",
+        "role" : "Co-Secretary",
+        "bio" : "Hi, I'm Sophia Veracoechea and I am going to be your co-secretary this year! I'm going into my junior year here at THS where I hope we all create everlasting memories from our volunteering opportunities. I like to hangout with friends, go to the gym, or just cozy up with a good book. I'm hopeful for an amazing year here in Key Club and that a lot of people will join us.",
+        "image": "Officers/OfficerPictures/SophiaVeracoechea.webp"
     },
     {
-        "name": "Ariella Ko",
-        "role": "Reporter",
-        "bio": "Hi! I'm Ariella, a rising sophomore and one of the Key Club editors! I love volunteering, whether it's with little kids at my Korean school or helping out at the food bank. I enjoy drawing, watching tv, and listening to music. I'm super excited for this years Key Club activites!",
-        "image" : "Officers/OfficerPictures/AriellaKo.webp"
+        "name": "Laiba Shafqat",
+        "role": "Co-Secretary",
+        "bio": "Hey! I'm Laiba and I'm one of the secretaties this year! I love spending time reading books, watching movies, and collecting minis! I hope to increase member involvement within our club and create opportunities that are both accessible and enjoyable for everyone!",
+        "image" : "Officers/OfficerPictures/LaibaShafqat.webp"
     },
     {
         "name": "Aaron Schmidt",
@@ -30,9 +30,15 @@
         "image": "Officers/OfficerPictures/AaronSchmid.webp"
     },
     {
-        "name": "Sophia Veracoechea",
-        "role" : "Secretary",
-        "bio" : "Hi, I'm Sophia Veracoechea and I am going to be your co-secretary this year! I'm going into my junior year here at THS where I hope we all create everlasting memories from our volunteering opportunities. I like to hangout with friends, go to the gym, or just cozy up with a good book. I'm hopeful for an amazing year here in Key Club and that a lot of people will join us.",
-        "image": "Officers/OfficerPictures/SophiaVeracoechea.webp"
+        "name": "Ariella Ko",
+        "role": "Reporter",
+        "bio": "Hi! I'm Ariella, a rising sophomore and one of the Key Club editors! I love volunteering, whether it's with little kids at my Korean school or helping out at the food bank. I enjoy drawing, watching tv, and listening to music. I'm super excited for this years Key Club activites!",
+        "image" : "Officers/OfficerPictures/AriellaKo.webp"
+    },
+    {
+        "name": "Jaiden Khosla",
+        "role": "Webmaster",
+        "bio" : "Hi, my name is Jaiden. I'm a Sophomore and the Webmaster for Key Club. I enjoy programming, listening to music, and practicing guitar in my free time. I'm very excited for this year and all the things we as a club are going to do.",
+        "image": "Officers/OfficerPictures/JaidenKhosla.webp"
     }
 ]
