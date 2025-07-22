@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "homepage": "https://james-e-taylor-key-club.github.io/KeyClubWebsite/KeyClubWebsite",
+  "homepage": "https://JETKeyClub.github.io",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
