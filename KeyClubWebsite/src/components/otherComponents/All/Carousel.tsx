@@ -39,13 +39,13 @@ export default function Carousel({children}: Props) {
 
     return <div className="Carousel">
         
-        <button onClick={()=>{rotateLeft()}}>←</button>
+        <button onClick={()=>{rotateRight()}}>←</button>
         <div className="content">
             {circSlice(useStartPoint).map((item, idx)=>{
                 return <div key={idx}>{item}</div>
             })}
         </div>
-        <button onClick={()=>{rotateRight()}}>→</button>
+        <button onClick={()=>{rotateLeft()}}>→</button>
         
     </div>
 }

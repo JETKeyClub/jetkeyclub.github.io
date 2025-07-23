@@ -31,9 +31,15 @@
     },
     {
         "name": "Ariella Ko",
-        "role": "Reporter",
+        "role": "Co-Editor",
         "bio": "Hi! I'm Ariella, a rising sophomore and one of the Key Club editors! I love volunteering, whether it's with little kids at my Korean school or helping out at the food bank. I enjoy drawing, watching tv, and listening to music. I'm super excited for this year's Key Club activities!",
         "image" : "Officers/OfficerPictures/AriellaKo.webp"
+    },
+    {
+        "name" : "Rethika Sreevidya",
+        "role": "Co-Editor",
+        "bio": "My name is Rethika, and I’m so excited to be one of your Editors this year! I’m currently a sophomore, and I can’t wait to help keep you all informed and connected through our newsletters. Two things I really enjoy doing is hanging out with friends or volunteering at churches! I’m looking forward to a year full of service, leadership, and unforgettable memories with all of you.",
+        "image" : "Officers/OfficerPictures/RethikaSreevidya.webp"
     },
     {
         "name": "Jaiden Khosla",
