@@ -39,7 +39,6 @@
     margin-bottom: -3rem;
     width: 25rem;
     height: 25rem;
-    filter: blur(1px);
     z-index: 1;
     margin-top: 5rem;
 }
