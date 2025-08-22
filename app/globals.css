@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+:root, html {
+    font-size: clamp(10px, 1vw, 40px);
+}
+
+@theme {
+    --color-keyblue-100: #ecf2f8;
+    --color-keyblue-200: #c6d7eb;
+    --color-keyblue-300: #a1bcde;
+    --color-keyblue-400: #7ba1d1;
+    --color-keyblue-500: #5586c3;
+    --color-keyblue-600: #3c5caa;
+    --color-keyblue-700: #2e5484;
+    --color-keyblue-800: #213c5e;
+    --color-keyblue-900: #142439;
+}
