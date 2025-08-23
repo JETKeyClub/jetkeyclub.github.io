@@ -3,48 +3,48 @@
         "name": "Krishna Srinivasan",
         "role": "President",
         "bio": "Hi, I'm Krishna, the President of Key Club. I'm of Indian descent. I enjoy watching shows and trying different kinds of food.",
-        "image" : "Officers/OfficerPictures/KrishnaSrinivasan.webp"
+        "image" : "/Assets/Officers/OfficerPictures/KrishnaSrinivasan.webp"
     },
     {
         "name": "Sophia Tang",
         "role": "Vice President",
         "bio" : "My name is Sophia. I'm a rising senior and the Vice President of Key Club. I'm excited for Walk to End Alzheimer's and all the fundraisers we are going to do. I'm involved in Orchestra outside of Key Club. In my free time I like to play pickleball and read fantasy novels. My favorite food is sushi and my favorite book series is Harry Potter.",
-        "image" : "Officers/OfficerPictures/SophiaTang.webp"
+        "image" : "/Assets/Officers/OfficerPictures/SophiaTang.webp"
     },
     {
         "name": "Sophia Veracoechea",
         "role" : "Co-Secretary",
         "bio" : "Hi, I'm Sophia Veracoechea and I am going to be your co-secretary this year! I'm going into my junior year here at THS where I hope we all create everlasting memories from our volunteering opportunities. I like to hangout with friends, go to the gym, or just cozy up with a good book. I'm hopeful for an amazing year here in Key Club and that a lot of people will join us.",
-        "image": "Officers/OfficerPictures/SophiaVeracoechea.webp"
+        "image": "/Assets/Officers/OfficerPictures/SophiaVeracoechea.webp"
     },
     {
         "name": "Laiba Shafqat",
         "role": "Co-Secretary",
         "bio": "Hey! I'm Laiba and I'm one of the secretaries this year! I love spending time reading books, watching movies, and collecting minis! I hope to increase member involvement within our club and create opportunities that are both accessible and enjoyable for everyone!",
-        "image" : "Officers/OfficerPictures/LaibaShafqat.webp"
+        "image" : "/Assets/Officers/OfficerPictures/LaibaShafqat.webp"
     },
     {
         "name": "Aaron Schmidt",
         "role": "Treasurer",
         "bio": "Hi. My name is Aaron Schmid. I am going into my senior year. I am the treasurer of Key Club. In my spare time I like to swim and play pickleball with my friends.",
-        "image": "Officers/OfficerPictures/AaronSchmid.webp"
+        "image": "/Assets/Officers/OfficerPictures/AaronSchmid.webp"
     },
     {
         "name": "Ariella Ko",
         "role": "Co-Editor",
         "bio": "Hi! I'm Ariella, a rising sophomore and one of the Key Club editors! I love volunteering, whether it's with little kids at my Korean school or helping out at the food bank. I enjoy drawing, watching tv, and listening to music. I'm super excited for this year's Key Club activities!",
-        "image" : "Officers/OfficerPictures/AriellaKo.webp"
+        "image" : "/Assets/Officers/OfficerPictures/AriellaKo.webp"
     },
     {
         "name" : "Rethika Sreevidya",
         "role": "Co-Editor",
         "bio": "My name is Rethika, and I’m so excited to be one of your Editors this year! I’m currently a sophomore, and I can’t wait to help keep you all informed and connected through our newsletters. Two things I really enjoy doing is hanging out with friends or volunteering at churches! I’m looking forward to a year full of service, leadership, and unforgettable memories with all of you.",
-        "image" : "Officers/OfficerPictures/RethikaSreevidya.webp"
+        "image" : "/Assets/Officers/OfficerPictures/RethikaSreevidya.webp"
     },
     {
         "name": "Jaiden Khosla",
         "role": "Webmaster",
         "bio" : "Hi, my name is Jaiden. I'm a Sophomore and the Webmaster for Key Club. I enjoy programming, listening to music, and practicing guitar in my free time. I'm very excited for this year and all the things we as a club are going to do.",
-        "image": "Officers/OfficerPictures/JaidenKhosla.webp"
+        "image": "/Assets/Officers/OfficerPictures/JaidenKhosla.webp"
     }
 ]

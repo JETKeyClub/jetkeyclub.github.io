@@ -24,7 +24,7 @@ export default function TextSubdivision({ children, className, ...props }: TextS
     // console.log(nonSuspenseImages)
     console.log(suspenseImages);
 
-    return <div className={`w-full flex flex-col md:flex-row-reverse gap-8 p-8 items-center justify-between  ${suspenseImages.length >= 2 ? "md:items-start md:justify-center" : ""} ${className}`} {...props}>
+    return <div className={`flex flex-col md:flex-row-reverse gap-8 p-8 items-center justify-center  ${suspenseImages.length >= 2 ? "md:items-start md:justify-center" : ""} ${className}`} {...props}>
         <div className="flex flex-col gap-y-5">
         {suspenseImages}
         </div>

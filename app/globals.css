@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root, html {
-    font-size: clamp(3px, 1vw, 40px);
+    font-size: clamp(3px, 1vw, 20px);
 }
 
 @theme {
@@ -30,4 +30,6 @@
     h4 {
         @apply text-[3rem];
     }
+
 }
+

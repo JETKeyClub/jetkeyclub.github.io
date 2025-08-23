@@ -4,12 +4,12 @@ import Card from "../../components/Card/Card"
 import Opportunity from "../../components/Opportunity/Opportunity"
 
 export default function Home(){
-    return <>
+    return <main>
         <section className="flex flex-col items-center text-white font-bold  h-300 md:h-145">
             <div className="absolute">
-                <SuspenseImage src="/Assets/homeBanner.webp" alt="Banner" width={800} height={450} className="w-screen h-300 md:h-145 object-cover blur-[5px] -z-10"/>
+                <SuspenseImage priority={true} src="/Assets/homeBanner.webp" alt="Banner" width={800} height={450} className="w-screen h-300 md:h-145 object-cover blur-[5px] -z-10"/>
             </div>
-            <SuspenseImage src="/Assets/KeyClubLogo.webp" alt="Key Club Logo" width={250} height={250} className="w-180 h-180 md:w-80 md:h-80 mt-15 mb-3"/>
+            <SuspenseImage priority={true} src="/Assets/KeyClubLogo.webp" alt="Key Club Logo" width={250} height={250} className="w-180 h-180 md:w-80 md:h-80 mt-15 mb-3"/>
             <h1 className="font-bold text-8xl md:text-5xl">James E. Taylor Key Club</h1>
             <h2 className="font-light text-[3.5rem] md:text-[1.75rem] mt-3">Helping our community since 2011</h2>
         </section>
@@ -28,11 +28,16 @@ export default function Home(){
             <h1 className="text-5xl font-extrabold mt-12">Big Opportunities</h1>
             <p className="text-2xl font-light">Hover over the images for details!</p>
         </div>
-        <div className="flex flex-wrap gap-6 justify-center items-center md:items-start mt-5 flex-col md:flex-row pb-10">
-            <Opportunity image="/Opportunities/OpportunityPictures/BakeSale.webp" description="ererer"/>
-            <Opportunity image="/Opportunities/OpportunityPictures/PieSocial.webp" description="ererer"/>
-            <Opportunity image="/Opportunities/OpportunityPictures/WalkToEndAlzheimers.webp" description="ererer"/>
+        <div className="flex justify-center mt-10">
+            <div className="flex flex-col flex-wrap h-[80vw] w-[85vw] gap-4">
+                <Opportunity image="/Opportunities/OpportunityPictures/BakeSale.webp" description="ererer" link="https://www.youtube.com"/>
+                <Opportunity image="/Opportunities/OpportunityPictures/PieSocial.webp" description="ererer"/>
+                <Opportunity image="/Opportunities/OpportunityPictures/WalkToEndAlzheimers.webp" description="ererer"/>
+                <Opportunity image="/Opportunities/OpportunityPictures/BakeSale.webp" description="ererer" link="https://www.youtube.com"/>
+                <Opportunity image="/Opportunities/OpportunityPictures/PieSocial.webp" description="ererer"/>
+                <Opportunity image="/Opportunities/OpportunityPictures/WalkToEndAlzheimers.webp" description="ererer"/>
 
+            </div>
         </div>
-    </>
+    </main>
 }
