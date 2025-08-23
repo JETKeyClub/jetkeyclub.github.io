@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root, html {
-    font-size: clamp(10px, 1vw, 40px);
+    font-size: clamp(3px, 1vw, 40px);
 }
 
 @theme {
@@ -14,4 +14,20 @@
     --color-keyblue-700: #2e5484;
     --color-keyblue-800: #213c5e;
     --color-keyblue-900: #142439;
+
+    --color-borderblue-500: #043874;
+}
+
+@layer components {
+    p {
+        @apply text-4xl lg:text-xl;
+    }
+
+    h2 {
+        @apply text-7xl lg:text-5xl font-bold;
+    }
+
+    h4 {
+        @apply text-[3rem];
+    }
 }

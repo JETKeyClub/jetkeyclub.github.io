@@ -4,9 +4,11 @@ import Image, { ImageProps } from "next/image";
 import { useState, useEffect } from "react";
 
 const LOADING_ANIMATION = "animate-pulse"
-interface SuspenseImageProps extends Omit<ImageProps, "src">{
+export interface SuspenseImageProps extends Omit<ImageProps, "src">{
     promise?: Promise<string>;
     src?: string;
+    width?: number;
+    height?: number;
 }
 
 export default function SuspenseImage(props: SuspenseImageProps){
@@ -23,7 +25,7 @@ export default function SuspenseImage(props: SuspenseImageProps){
             setLoadedImage(props.src);
     }, [props.src, props.promise])
 
-    return <div className={`${isLoading ? `${props.className} ${LOADING_ANIMATION} bg-gray-400 relative flex justify-center items-center before-content-['']` : ""}`}>
-        {useLoadedImage != "" && <Image {...props} src={useLoadedImage} className={`${props.className} select-none relative ${isLoading ? "opacity-0" : ""}`} draggable={false} onLoad={()=>setIsLoading(false)}/>}
+    return <div className={`SuspenseImage ${isLoading ? `${props.className} ${LOADING_ANIMATION} bg-gray-400 relative flex justify-center items-center before-content-['']` : ""}`}>
+        {useLoadedImage != "" && <Image {...props} width={props.width || 800} height={props.height || 450} src={useLoadedImage} className={`${props.className} select-none relative ${isLoading ? "opacity-0" : ""} ${!(props.className?.includes(" w-") || props.className?.includes(" h-")) ? "w-[60rem] lg:w-[40rem]" : ""} select-none`} draggable={false} onLoad={()=>setIsLoading(false)}/>}
     </div>
 }
