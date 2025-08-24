@@ -8,7 +8,7 @@ interface HeaderBtnProps {
 }
 
 export default function HeaderBtn({ name, dispatch }: HeaderBtnProps){
-    return <Link href={`/${name}`} onClick={()=>dispatch(false)} 
+    return <Link href={`/${name.split(" ")[0].toLowerCase()}`} onClick={()=>dispatch(false)} 
     className="
     text-white text-8xl md:text-3xl
     font-bold text-shadow-sm text-shadow-gray900
