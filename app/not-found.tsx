@@ -8,7 +8,7 @@ export default function NotFound(){
             <div className="flex flex-col items-center">
                 <h2 className="text-8xl md:text-6xl font-bold">404: Not Found</h2>
                 <p className="text-6xl md:text-4xl font-light">We dont know where you are trying to go...</p>
-                <Link href="/home" className="text-7xl md:text-4xl text-blue-500 transition-all hover:scale-105 hover:text-blue-700">Go to Home</Link>
+                <Link href="/" className="text-7xl md:text-4xl text-blue-500 transition-all hover:scale-105 hover:text-blue-700">Go to Home</Link>
             </div>
         </div>
     )
