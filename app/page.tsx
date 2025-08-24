@@ -21,9 +21,9 @@ export default function Home(){
             {/* <SuspenseImage src="/Assets/homeMain.webp" alt="What is Key Club? Picture" className=""/> */}
         </TextSubdivision>
         <div className="bg-keyblue-800 flex justify-center items-center gap-8 flex-col md:flex-row">
-            <Card name="Jaiden Khosla" quote="Key Club is a great opportunity to help out my community and to meet new people." profileImage="/Assets/nicholas_lovely.png"/>
-            <Card name="Jaiden Khosla" quote="Key Club is a great opportunity to help out my community and to meet new people." profileImage="/Assets/nicholas_lovely.png"/>
-            <Card name="Jaiden Khosla" quote="Key Club is a great opportunity to help out my community and to meet new people." profileImage="/Assets/nicholas_lovely.png"/>
+                <Card profileImage="/Assets/Officers/OfficerPictures/JaidenKhosla.webp" quote="Key Club is a great opportunity to help out my community and to meet new people." name="Jaiden Khosla"/>
+                <Card profileImage="/Assets/Officers/OfficerPictures/SophiaTang.webp" quote="This club has allowed me to contribute to my community as well as connecting with new people." name="Sophia Tang"/>
+                <Card profileImage="/Assets/nicholas_lovely.png" quote="I really enjoy participating in this club. There's so many great things we've done and so many more to come." name="Nicholas Lovely"/>
         </div>
         <div className="text-center flex flex-col gap-y-2">
             <h1 className="text-5xl font-extrabold mt-12">Big Opportunities</h1>
