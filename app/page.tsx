@@ -3,7 +3,7 @@
 import * as nav from "next/navigation";
 
 export default function base() {
-  nav.useRouter().push("/home")
+  nav.useRouter().push("/Home")
   return (
     <></>
   );
