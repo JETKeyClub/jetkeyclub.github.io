@@ -43,7 +43,7 @@ export default function Opportunity({ image, description, link }: OpportunityPro
                     alt={description}
                     // style={useDetails ? {width: `${useDetails[0][0]*0.5}rem`, height: `${useDetails[0][1]*0.5}rem`}: {}}
                     className={`transition-[filter] duration-[250ms] w-full block object-cover
-                         ${link && "cursor-pointer"} hover:blur-[4px] hover:brightness-75`}
+                         ${link && "cursor-pointer"} group-hover:blur-[4px] group-hover:brightness-75`}
                     onClick={()=>link && link != "" && window.open(link, "__blank")}
                 />
                 <p className="absolute text-2xl pointer-events-none md:text-lg top-0 p-[5%] text-white font-normal

@@ -1,13 +1,14 @@
 import TextSubdivision from "@/components/TextSubdivision/TextSubdivision"
 import SuspenseImage from "@/components/SuspenseImage/SuspenseImage"
 import Card from "../../components/Card/Card"
-import Opportunity from "../../components/Opportunity/Opportunity"
+import OpportunityJSON from "@/public/Assets/Opportunities/Opportunities.json"
+import Opportunity from "@/components/Opportunity/Opportunity"
 
 export default function Home(){
     return <main>
         <section className="flex flex-col items-center text-white font-bold  h-300 md:h-145">
             <div className="absolute">
-                <SuspenseImage priority={true} src="/Assets/homeBanner.webp" alt="Banner" width={800} height={450} className="w-screen h-300 md:h-145 object-cover blur-[5px] -z-10"/>
+                <SuspenseImage priority={true} src="/Assets/homeBanner.webp" alt="Banner" width={800} height={450} className="w-screen h-300 md:h-145 object-cover blur-[6px] -z-10"/>
             </div>
             <SuspenseImage priority={true} src="/Assets/KeyClubLogo.webp" alt="Key Club Logo" width={250} height={250} className="w-180 h-180 md:w-80 md:h-80 mt-15 mb-3"/>
             <h1 className="font-bold text-8xl md:text-5xl">James E. Taylor Key Club</h1>
@@ -29,13 +30,8 @@ export default function Home(){
             <p className="text-2xl font-light">Hover over the images for details!</p>
         </div>
         <div className="flex justify-center mt-10">
-            <div className="flex flex-col flex-wrap h-[80vw] w-[85vw] gap-4">
-                <Opportunity image="/Opportunities/OpportunityPictures/BakeSale.webp" description="ererer" link="https://www.youtube.com"/>
-                <Opportunity image="/Opportunities/OpportunityPictures/PieSocial.webp" description="ererer"/>
-                <Opportunity image="/Opportunities/OpportunityPictures/WalkToEndAlzheimers.webp" description="ererer"/>
-                <Opportunity image="/Opportunities/OpportunityPictures/BakeSale.webp" description="ererer" link="https://www.youtube.com"/>
-                <Opportunity image="/Opportunities/OpportunityPictures/PieSocial.webp" description="ererer"/>
-                <Opportunity image="/Opportunities/OpportunityPictures/WalkToEndAlzheimers.webp" description="ererer"/>
+            <div className="flex gap-4 w-[85vw] h-[45vw]">
+                {OpportunityJSON.filter((_, idx)=>idx <= OpportunityJSON.length/3).map(opportunity=><Opportunity key={opportunity.description} image={opportunity.image} description={opportunity.description}/>)}
 
             </div>
         </div>
