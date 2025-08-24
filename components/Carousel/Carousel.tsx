@@ -25,7 +25,7 @@ export default function Carousel({ children, ...props }: CarouselProps){
 
         setChildrenArray(newArr);
 
-    }, [useStartpoint])
+    }, [useStartpoint, range, children])
 
     // const [ useEndpoint, setEndpoint ] = useState<number>(Children.count(children));
 

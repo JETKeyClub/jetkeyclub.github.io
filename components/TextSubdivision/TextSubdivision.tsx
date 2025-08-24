@@ -1,12 +1,13 @@
 "use client"
 
-import React, { ReactElement, ReactNode } from "react";
+import React, { ReactElement } from "react";
 
 import { ComponentProps, Children } from "react";
-import SuspenseImage, { SuspenseImageProps } from "../SuspenseImage/SuspenseImage";
+import { SuspenseImageProps } from "../SuspenseImage/SuspenseImage";
 
 type potentialSuspenseImage = ReactElement<SuspenseImageProps>
 
+// eslint-disable-next-line  @typescript-eslint/no-explicit-any
 function isSuspenseImage(child: any): child is potentialSuspenseImage {
     return React.isValidElement(child) && typeof child.props === "object" && child.props !== null && "src" in child.props;
 }

@@ -23,7 +23,7 @@ export default function Footer(){
         {
             Object.values(footerLinks).map(footerLink => 
             <Link href={footerLink.link} target="_blank" className={`p-8 md:p-6 text-6xl md:text-3xl ${footerLink.bg}
-            transition-all text-white rounded-full hover:brightness-85 hover:scale-105`}>
+            transition-all text-white rounded-full hover:brightness-85 hover:scale-105`} key={footerLink.link}>
                 {<footerLink.icon/>}
             </Link>)
         }

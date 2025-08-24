@@ -7,7 +7,7 @@ export default async function getBaseDimensions(src: string): Promise<number[]>{
     const image = new Image();
     image.src = src;
     
-    return new Promise((resolve, reject)=>{
+    return new Promise((resolve)=>{
         image.onload = () => {
             const dims = [image.width, image.height];
             cache.set(src, dims);

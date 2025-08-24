@@ -1,7 +1,6 @@
 import OfficerCard from "@/components/OfficerCard/OfficerCard";
 import Carousel from "@/components/Carousel/Carousel";
 import OfficerJSON from "@/public/Assets/Officers/OfficerBios.json";
-import { routeModule } from "next/dist/build/templates/app-page";
 
 export default function Officers(){
     const officers = OfficerJSON.map(({ name, role, bio, image}) => <OfficerCard name={name} role={role} bio={bio} icon={image} key={name}/>);

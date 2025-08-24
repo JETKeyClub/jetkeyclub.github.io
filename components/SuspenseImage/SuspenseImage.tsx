@@ -26,6 +26,6 @@ export default function SuspenseImage(props: SuspenseImageProps){
     }, [props.src, props.promise])
 
     return <div className={`SuspenseImage ${isLoading ? `${props.className} ${LOADING_ANIMATION} bg-gray-400 relative flex justify-center items-center before-content-['']` : ""}`}>
-        {useLoadedImage != "" && <Image {...props} width={props.width || 800} height={props.height || 450} src={useLoadedImage} className={`${props.className} select-none relative ${isLoading ? "opacity-0" : ""} ${!(props.className?.includes(" w-") || props.className?.includes(" h-")) ? "w-[60rem] lg:w-[40rem]" : ""} select-none`} draggable={false} onLoad={()=>setIsLoading(false)}/>}
+        {useLoadedImage != "" && <Image {...props} alt={props.alt} width={props.width || 800} height={props.height || 450} src={useLoadedImage} className={`${props.className} select-none relative ${isLoading ? "opacity-0" : ""} ${!(props.className?.includes(" w-") || props.className?.includes(" h-")) ? "w-[60rem] lg:w-[40rem]" : ""} select-none`} draggable={false} onLoad={()=>setIsLoading(false)}/>}
     </div>
 }

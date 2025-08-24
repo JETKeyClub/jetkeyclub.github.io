@@ -3,7 +3,6 @@
 import SuspenseImage from "@/components/SuspenseImage/SuspenseImage";
 import getBaseDimensions from "@/components/Opportunity/getDetails";
 import { useEffect, useState } from "react";
-import clsx from "clsx";
 
 const WANTED_HEIGHT = 25;
 
