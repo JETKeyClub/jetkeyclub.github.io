@@ -4,7 +4,7 @@ import Card from "../../components/Card/Card"
 import OpportunityJSON from "@/public/Assets/Opportunities/Opportunities.json"
 import Opportunity from "@/components/Opportunity/Opportunity"
 
-export default function Home(){
+export default function home(){
     return <main>
         <section className="flex flex-col items-center text-white font-bold  h-300 md:h-145">
             <div className="absolute">
