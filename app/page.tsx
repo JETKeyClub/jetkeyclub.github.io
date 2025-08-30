@@ -1,3 +1,5 @@
+"use client"
+
 import TextSubdivision from "@/components/TextSubdivision/TextSubdivision"
 import SuspenseImage from "@/components/SuspenseImage/SuspenseImage"
 import Card from "@/components/Card/Card"
@@ -10,7 +12,7 @@ export default function Home(){
             <div className="absolute">
                 <SuspenseImage priority={true} src="/Assets/homeBanner.webp" alt="Banner" width={800} height={450} className="w-screen h-300 md:h-145 object-cover blur-[6px] -z-10"/>
             </div>
-            <SuspenseImage priority={true} src="/Assets/KeyClubLogo.webp" alt="Key Club Logo" width={250} height={250} className="w-180 h-180 md:w-80 md:h-80 mt-15 mb-3"/>
+            <SuspenseImage priority={true} src="/Assets/KeyClubLogo.webp" alt="Key Club Logo" width={250} height={250} className="w-180 h-180 md:w-80 md:h-80 mt-15 mb-3 rounded-full"/>
             <h1 className="font-bold text-8xl md:text-5xl">James E. Taylor Key Club</h1>
             <h2 className="font-light text-[3.5rem] md:text-[1.75rem] mt-3">Helping our community since 2011</h2>
         </section>
@@ -37,3 +39,4 @@ export default function Home(){
         </div>
     </main>
 }
+

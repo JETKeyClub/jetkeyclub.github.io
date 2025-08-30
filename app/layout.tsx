@@ -21,10 +21,12 @@ export default function RootLayout({
         className={`${PoppinsFont.className} antialiased`}
       >
         <Header/>
-        <div className="w-full -z-10">
-          {children}
+        <div className="absolute -z-10 w-full">
+          <div className="w-full">
+              {children}
+          </div>
+          <Footer/>
         </div>
-        <Footer/>
       </body>
     </html>
   );
