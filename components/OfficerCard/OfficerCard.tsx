@@ -9,7 +9,7 @@ interface OfficerCardProps {
 
 export default function OfficerCard({ name, icon, role, bio}: OfficerCardProps){
     return <div className="flex flex-col justify-center items-center pb-10">
-        <div className="md:border-[0.75rem] relative 
+        <div className="md:border-[0.75rem] border-solid border-[1rem] relative 
         top-20 z-2 border-keyblue-800 size-70 md:size-40 overflow-hidden
         rounded-full flex justify-center items-center bg-gray-500">
             <SuspenseImage src={icon} alt={`An image of ${name}`} 

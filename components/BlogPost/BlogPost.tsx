@@ -1,19 +1,29 @@
 import PDFDisplayer from "@/components/PDFDisplayer/PDFDisplayer";
 import Tag from "./Tag";
+import { Timestamp } from "next/dist/server/lib/cache-handlers/types";
+import MarkdownBlogPost from "@/components/BlogPost/MarkdownBlogPost";
+import { UUID } from "crypto";
 
 export interface BlogPostProps{
     title: string;
-    coverImage: string;
     description: string;
     authors: string[];
-    date: Date;
+    date: Timestamp;
     tags: BlogTags[];
-
     type: BlogPostType;
-    args: PDFProps | MarkdownProps
+    coverImg?: string;
+    id?: number;
+    uuid?: UUID;  
+    args: {
+        content: string;
+        imageCache?: {[key: string]: string}
+    }
 }
 
-export default function BlogPost({ title, coverImage, description, authors, date, tags, type, args}: BlogPostProps){
+export default function BlogPost({ title, description, authors, date, tags, type, args}: BlogPostProps){
+
+    const parsedDate = new Date(date);
+    
     return (
         <main className="flex flex-col items-center">
             <section className="pb-10 flex flex-col items-center">
@@ -23,7 +33,7 @@ export default function BlogPost({ title, coverImage, description, authors, date
                     <p>By</p>
                     {authors.map((author,idx)=><p key={`${author}-${idx}`}>{author}{authors.length > 2 && idx < authors.length-2 ? ",": ""}{ idx == authors.length-2 ? " and": " "}</p>)}
                 </div>
-                <p className="text-4xl font-semibold mt-4">{`${date.getMonth()}/${date.getDay()}/${date.getFullYear()}`}</p>
+                <p className="text-4xl font-semibold mt-4">{`${parsedDate.getMonth()}/${parsedDate.getDay()}/${parsedDate.getFullYear()}`}</p>
                 <div className="flex gap-x-2 mt-4">
                     {tags.map((tag, idx)=><Tag key={`${tag}-${idx}`} tag={tag}/>)}
                 </div>
@@ -34,7 +44,9 @@ export default function BlogPost({ title, coverImage, description, authors, date
                 <PDFDisplayer src={args.content}/>
             )}
             {type === "markdown" && (
-                <p>Markdown is not implemented yet.</p>
+                <div>
+                    <MarkdownBlogPost src={args.content}/>
+                </div>
             )}
         </main>
     )    
