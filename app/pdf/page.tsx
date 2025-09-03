@@ -15,10 +15,9 @@ import BlogPost, {BlogPostProps} from "@/components/BlogPost/BlogPost";
 
 const args: BlogPostProps = {
     title: "June Newsletter",
-    coverImage:"",
     description: "Our newsletter for this June!",
     authors: ["Ariella Ko", "Rethika"],
-    date: new Date(),
+    date: Date.now(),
     tags: ["Announcement", "Info", "Project", "Newsletter", "Update"],
     type: "pdf",
     args: {

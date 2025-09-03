@@ -4,6 +4,7 @@ import { HiQuestionMarkCircle } from "react-icons/hi"; //Info
 import { FaProjectDiagram } from "react-icons/fa"; //Project
 import { MdOutlineTipsAndUpdates } from "react-icons/md"; //Update
 import { IconType } from "react-icons";
+import { BlogTags } from "@/types";
 
 
 const tagMap = new Map<BlogTags, [IconType, string]>([
@@ -19,7 +20,7 @@ export default function Tag({ tag }: { tag: BlogTags}){
     const [ Icon, bgColor ] = tagMap.get(tag)||[HiQuestionMarkCircle||"bg-skyblue-500"];
 
     return (
-        <div className={`flex justify-center items-center gap-x-2 text-white text-3xl font-semibold p-5 rounded-2xl ${bgColor}`}>
+        <div className={`select-none flex justify-center items-center gap-x-2 text-white text-3xl sm:text-sm font-semibold p-5 py-3 lg:p-4 lg:py-2 rounded-2xl ${bgColor}`}>
         <Icon/>
         {tag}
     </div>

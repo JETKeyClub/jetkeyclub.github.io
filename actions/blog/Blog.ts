@@ -4,12 +4,10 @@ import * as zod from "zod";
 import { database, supabase } from "../database/Database";
 import BlogPostComponent, { BlogPostProps } from "@/components/BlogPost/BlogPost";
 import { randomUUID, UUID } from "crypto";
+import { BlogPostType, BlogPostTypeEnum } from "@/types";
 
 const count = await database`SELECT COUNT(*) AS POSTS FROM blog`;
-
-export async function fetchBlogPosts(){
-    return (new Array(count)).map((_, idx)=>getBlogPostById(idx+1));
-}
+const blogBucket = supabase.storage.from("blog");
 
 const MarkdownPost = zod.object({
     title: zod.string().nonempty("Can't be an empty title."),
@@ -30,7 +28,9 @@ const PDFPost = zod.object({
     pdfFile: zod.file("Must be a file.")
 })
 
-
+export async function fetchBlogPosts(){
+    return (new Array(count)).map((_, idx)=> getBlogPostById(idx+1));
+}
 
 export type BlogCreationSchema = {
     message?: string | null,
@@ -70,7 +70,7 @@ export async function createMarkdownPost(formData: FormData){
 
     const suc = await database`INSERT INTO blog (title, authors, tags, uuid) VALUES (${actualData.title}, ${actualData.authors}, ${actualData.tags}, ${uniqueIdentifier})`
 
-    supabase.storage.from("blog").upload(`${uniqueIdentifier}/${actualData.coverImage.name}`, actualData.coverImage);
+    supabase.storage.from("blog").upload(`${uniqueIdentifier}/coverImage.webp`, actualData.coverImage);
     for( const file of actualData.imageFiles )
         supabase.storage.from("blog").upload(`${uniqueIdentifier}/${file.name}`, file);
     
@@ -79,39 +79,44 @@ export async function createMarkdownPost(formData: FormData){
     };
 }
 
-export async function renderMarkdownPost(post: BlogPostProps): Promise<BlogPostProps>{
+export async function getCoverImage(uuid: UUID): Promise<string> {
+    return  blogBucket.getPublicUrl(`${uuid}/coverImage.webp`).data.publicUrl;
+}
 
-    const blogBucket = await supabase.storage.from("blog");
-
-    const mdFile = await blogBucket.getPublicUrl(`${post.uuid}/${post.args.content}`).data.publicUrl;
-    const coverImage = await blogBucket.getPublicUrl(`${post.uuid}/${post.coverImg}`).data.publicUrl;
-
-    const fileNames = (await blogBucket.list(`${post.uuid}`)).data?.filter(file=>file.name != post.args.content && file.name != post.coverImg).map(file=>file.name);
+export async function getImageCache(post: BlogPostProps): Promise<{[key: string]: string}>{
+    const fileNames = (await blogBucket.list(`${post.uuid}`)).data?.filter(file=>file.name != post.args.content && !file.name.startsWith("coverImage")).map(file=>file.name);
     const publicUrlCache: {[key: string]: string} = {}
+    
     if(fileNames){
         for(const fileName of fileNames){
-            publicUrlCache[fileName] = await supabase.storage.from("blog").getPublicUrl(`${post.uuid}/${fileName}`).data.publicUrl; 
+            publicUrlCache[fileName] = supabase.storage.from("blog").getPublicUrl(`${post.uuid}/${fileName}`).data.publicUrl; 
         }
     }
+
+    return publicUrlCache;
+}
+
+export async function renderMarkdownPost(post: BlogPostProps): Promise<BlogPostProps>{
+    const mdFile =  blogBucket.getPublicUrl(`${post.uuid}/${post.args.content}`).data.publicUrl;
     
-    return (
-        {
+
+        
+    const returnMap = {
             ...post,
-            coverImg: coverImage,
-            type: "markdown",
-            args: {
-                content: mdFile,
-                imageCache: publicUrlCache
-            }
-        }
-    )
+            type: BlogPostTypeEnum.Markdown,
+            args:{
+                content: mdFile
+            },
+    };
+
+    return returnMap;
 }
 
 
 const cache: Map<number,BlogPostProps> = new Map<number, BlogPostProps>();
 
 export async function getBlogPostById(id: number): Promise<BlogPostProps> {
-    if(cache.has(id)) return cache.get(id)!;
+    // if(cache.has(id)) return cache.get(id)!;
     
     const post = (await database<BlogPostProps[]>`SELECT * FROM blog WHERE id=${id}`)[0];
 

@@ -1,14 +1,12 @@
-import { fetchBlogPosts } from "@/actions/blog/Blog"
-import BlogPostOverview from "@/components/BlostPostOverview/BlogPostOverview";
+import BlogGallery from "@/components/BlostPostOverview/BlogGallery";
 
-
-export default  async function Blog(){
+export default function Blog(){
     
-    const posts = await fetchBlogPosts();
+    
 
     return (
         <div>
-            {posts.map(async (post, idx)=><BlogPostOverview props={await post} key={`post-${idx}`}/>)}
+            <BlogGallery/>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import { BlogPostProps } from "@/components/BlogPost/BlogPost";
 import SuspenseImage from "@/components/SuspenseImage/SuspenseImage";
@@ -7,22 +7,27 @@ import { Timestamp } from "next/dist/server/lib/cache-handlers/types";
 import { useEffect, useState } from "react";
 
 interface BlogPostOverviewProps {
-    props: BlogPostProps
+    props: BlogPostProps;
+    coverImage: string;
 }
 
-export default function BlogPostOverview({ props }: BlogPostOverviewProps){
-
-
+export default function BlogPostOverview({ props, coverImage }: BlogPostOverviewProps){
+    // console.log(props);
     return (
-        <div>
-            { props?.coverImg  && <>x<SuspenseImage unoptimized src={props.coverImg} alt={`Cover image of the ${props.title}.`}/>
-            <div>
-                <p>{props.title}</p>
-                <div className="flex">
+        <div className="flex border p-5 shadow-xl rounded-2xl group">
+            <SuspenseImage unoptimized src={coverImage} alt={`Cover Image for ${props.title}.`} className="h-[56.25rem] w-100"/>
+            <div className="flex flex-col gap-y-3 w-[40%]">
+                <p className="font-semibold text-5xl">{props.title}</p>
+                
+                <p className="text-xl italic">
+                    Written by {props.authors.join(", ")}
+                </p>
+                <div className="flex gap-x-1">
                     {props.tags.map((tag, idx)=><Tag tag={tag} key={`${tag}-${idx}`}/>)}
                 </div>
+
                 <p>{props.description}</p>
-            </div></>}
+            </div>
         </div>
     );
 }

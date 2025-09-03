@@ -18,7 +18,7 @@ export default function SuspenseImage(props: SuspenseImageProps){
 
     useEffect(()=>{
         if(!props.src && !props.promise)
-            throw new Error("SuspenseImage must have either a src or promise.");
+            setLoadedImage("/assets/FileNotFound.png");
         else if(props.promise)
             props.promise.then(res=>setLoadedImage(res));
         else if(props.src)

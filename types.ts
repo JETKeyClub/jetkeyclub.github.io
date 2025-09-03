@@ -1,5 +1,9 @@
 
-type BlogPostType = "pdf" | "markdown";
+export type BlogPostType = "pdf" | "markdown";
 
+export enum BlogPostTypeEnum {
+    Markdown = "markdown",
+    Pdf = "pdf"
+}
 
-type BlogTags = "Newsletter" | "Announcement" | "Info" | "Project" | "Update";
+export type BlogTags = "Newsletter" | "Announcement" | "Info" | "Project" | "Update";

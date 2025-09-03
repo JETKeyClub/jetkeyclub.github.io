@@ -2,6 +2,8 @@ import PDFDisplayer from "@/components/PDFDisplayer/PDFDisplayer";
 import Tag from "./Tag";
 import { Timestamp } from "next/dist/server/lib/cache-handlers/types";
 import MarkdownBlogPost from "@/components/BlogPost/MarkdownBlogPost";
+import { BlogTags, BlogPostType } from "@/types";
+
 import { UUID } from "crypto";
 
 export interface BlogPostProps{
@@ -11,12 +13,12 @@ export interface BlogPostProps{
     date: Timestamp;
     tags: BlogTags[];
     type: BlogPostType;
-    coverImg?: string;
+    // coverImage?: string;
     id?: number;
     uuid?: UUID;  
     args: {
         content: string;
-        imageCache?: {[key: string]: string}
+        // imageCache?: {[key: string]: string}
     }
 }
 
