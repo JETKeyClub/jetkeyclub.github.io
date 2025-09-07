@@ -1,6 +1,6 @@
 import postgres from "postgres";
 import { createClient } from "@supabase/supabase-js";
-
+import { SignOut } from "@supabase/supabase-js";
 /*
 Disclaimer:
 You really don't want to mess with this unless you know what you are doing.

@@ -115,12 +115,12 @@ export async function renderMarkdownPost(post: BlogPostProps): Promise<BlogPostP
 
 const cache: Map<number,BlogPostProps> = new Map<number, BlogPostProps>();
 
-export async function getBlogPostById(id: number): Promise<BlogPostProps> {
-    // if(cache.has(id)) return cache.get(id)!;
+export async function getBlogPostById(id: number): Promise<BlogPostProps|null> {
+    if(cache.has(id)) return cache.get(id)!;
     
     const post = (await database<BlogPostProps[]>`SELECT * FROM blog WHERE id=${id}`)[0];
 
-    if(post===null) throw new Error(`Post with an id of ${id} is null.`)
+    if(post===null || post === undefined) return null;
 
     if(post.type==="markdown"){
         const parsedPost = await renderMarkdownPost(post);

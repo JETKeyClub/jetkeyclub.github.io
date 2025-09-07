@@ -28,9 +28,9 @@ export default function BlogPost({ title, description, authors, date, tags, type
     
     return (
         <main className="flex flex-col items-center">
-            <section className="pb-10 flex flex-col items-center">
-                <h1 className="text-8xl font-bold">{title}</h1>
-                <p className="text-5xl italic font-light pb-5 border-b-[1px] border-solid border-gray-300">{description}</p>
+            <section className="pb-10 flex flex-col items-center text-center">
+                <h1 className="text-8xl font-bold mb-5">{title}</h1>
+                <p className="text-4xl w-[75%] italic font-light pb-5 border-b-[1px] border-solid border-gray-300">{description}</p>
                 <div className="pt-5 flex gap-x-2 justify-center items-center font-light text-3xl">
                     <p>By</p>
                     {authors.map((author,idx)=><p key={`${author}-${idx}`}>{author}{authors.length > 2 && idx < authors.length-2 ? ",": ""}{ idx == authors.length-2 ? " and": " "}</p>)}

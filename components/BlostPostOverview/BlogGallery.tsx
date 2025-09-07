@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { fetchBlogPosts, getCoverImage } from "@/actions/blog/Blog"
 import BlogPostOverview from "@/components/BlostPostOverview/BlogPostOverview";
+import { BlogPostProps } from "../BlogPost/BlogPost";
 
 export default function BlogGallery(){
     
@@ -12,11 +13,8 @@ export default function BlogGallery(){
         fetchBlogPosts().then(
             async (val)=>{
                 setBlogPosts(val.map(async post=> {
-                    const fixedPost = await post;
-
-                    console.log(fixedPost);
-
-                    return <BlogPostOverview props={fixedPost} coverImage={await getCoverImage(fixedPost.uuid!)}/>
+                    if(post!=null)
+                    return <BlogPostOverview props={post as Promise<BlogPostProps>}/>
                 }));
             }
         )

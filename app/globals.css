@@ -32,5 +32,9 @@
         @apply text-[3rem];
     }
 
+    input::-ms-reveal, input::-ms-clear {
+        display: none;
+    }
+
 }
 
