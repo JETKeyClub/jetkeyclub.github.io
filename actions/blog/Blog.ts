@@ -1,12 +1,11 @@
 "use server"
 import * as zod from "zod";
 
-import { database, supabase } from "../database/Database";
+import { database, supabase } from "@/actions/database/Database";
 import BlogPostComponent, { BlogPostProps } from "@/components/BlogPost/BlogPost";
 import { randomUUID, UUID } from "crypto";
 import { BlogPostType, BlogPostTypeEnum } from "@/types";
 
-const count = await database`SELECT COUNT(*) AS POSTS FROM blog`;
 const blogBucket = supabase.storage.from("blog");
 
 const MarkdownPost = zod.object({
@@ -29,6 +28,7 @@ const PDFPost = zod.object({
 })
 
 export async function fetchBlogPosts(){
+    const count = await database`SELECT COUNT(*) AS POSTS FROM blog`;
     return (new Array(count)).map((_, idx)=> getBlogPostById(idx+1));
 }
 

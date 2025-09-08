@@ -5,8 +5,13 @@ import SuspenseImage from "@/components/SuspenseImage/SuspenseImage"
 import Card from "@/components/Card/Card"
 import OpportunityJSON from "@/public/Assets/Opportunities/Opportunities.json"
 import Opportunity from "@/components/Opportunity/Opportunity"
+import { redirect , useSearchParams } from "next/navigation"
 
 export default function Home(){
+
+   const params =  useSearchParams();
+   if(params.get("code")) redirect("/dashboard")
+
     return <main>
         <section className="flex flex-col items-center text-white font-bold  h-300 md:h-145">
             <div className="absolute">

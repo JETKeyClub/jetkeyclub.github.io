@@ -2,7 +2,7 @@
 
 import { login, userLoginOutput } from "@/actions/auth/actions";
 import { useActionState, useState } from "react"
-
+import Error from "./Error";
 import { Dispatch, SetStateAction } from "react";
 import PasswordInput from "./PasswordInput";
 
@@ -30,8 +30,9 @@ export default function SignIn({ dispatch }: SignInProps){
                 className="text-5xl md:text-xl w-[80%] p-3 rounded-lg
                  bg-slate-300 border-[1px] border-slate-500 transition-all 
                  md:focus:text-[1.28rem] focus:text-[3.1rem]" disabled={isPending}/> 
-
-                <PasswordInput placeholder="Password" disabled={isPending} required/>
+                <Error state={state.errors?.email}/>
+                <PasswordInput placeholder="Password" disabled={isPending} name="password" required/>
+                <Error state={state.errors?.password}/>
 
                 <button  
                 className="bg-slate-700 transition-all hover:bg-slate-600 hover:scale-105 cursor-pointer  

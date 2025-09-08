@@ -121,7 +121,7 @@ export async function signup(prevData: userRegisterOutput, formData: FormData): 
     email: parsedData.email,
     password: parsedData.password,
     options: {
-      emailRedirectTo: "/dashboard"
+      emailRedirectTo: `${process.env.NEXT_PUBLIC_URL}/dashboard`
     }
     
   }
@@ -134,6 +134,8 @@ export async function signup(prevData: userRegisterOutput, formData: FormData): 
       messages: [error.name]
     }
   }
+
+  await database`INSERT INTO emailToName (name, email) VALUES (${parsedData.name,data.email})`;
   
   (await cookies()).set("registerEmail", data.email, {maxAge: 600000});
 
@@ -147,7 +149,7 @@ export async function resendVerificationEmail(email: string){
     email: email,
     type: "signup",
     options: {
-      emailRedirectTo: "/dashboard"
+      emailRedirectTo: `${process.env.NEXT_PUBLIC_URL}/dashboard`
     }
   })
 
@@ -157,4 +159,18 @@ export async function resendVerificationEmail(email: string){
 
 export async function getEmailByCookies(){
   return (await cookies()).get("registerEmail")?.value
+}
+
+export async function getNameByEmail(email: string){
+    return (await database<{name: string}[]>`SELECT name FROM emailtoname WHERE email=${email} LIMIT 1`)[0]?.name;
+}
+
+export async function forgotPassword(email: string){
+  const res = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: `${process.env.NEXT_PUBLIC_URL}/dashboard`
+  })
+}
+
+export async function getRoleByEmail(email: string){
+  return (await database<{role: string}[]>`SELECT role FROM roles WHERE email=${email}`)[0].role;
 }
