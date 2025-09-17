@@ -1,7 +1,7 @@
 "use client"
 
-import { login, userLoginOutput } from "@/actions/auth/actions";
-import { useActionState, useState } from "react"
+import { login } from "@/actions/auth/actions";
+import { useActionState } from "react"
 import Error from "./Error";
 import { Dispatch, SetStateAction } from "react";
 import PasswordInput from "./PasswordInput";
@@ -41,7 +41,7 @@ export default function SignIn({ dispatch }: SignInProps){
                 >Continue</button>
                 {state.messages?.map((msg, idx)=><p key={`${msg}-${idx}`} className="font-light text-3xl text-red-600">{msg}</p>)}
                 <div className="flex gap-x-2 group cursor-pointer select-none" onClick={()=>dispatch("register")}>
-                    <p className="font-light text-4xl md:text-lg">Don't have an account?</p>
+                    <p className="font-light text-4xl md:text-lg">{"Don't have an account?"}</p>
                     <p className="text-blue-700 group-hover:underline text-4xl md:text-lg">Register</p>
                 </div>
             

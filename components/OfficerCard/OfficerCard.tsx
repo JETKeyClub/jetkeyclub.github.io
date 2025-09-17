@@ -1,13 +1,19 @@
 import SuspenseImage from "@/components/SuspenseImage/SuspenseImage"
+import Contact, { types } from "./Contact"
 
 interface OfficerCardProps {
     name: string,
     role: string,
     icon: string,
-    bio: string
+    bio: string,
+    contact?: {
+        Email?: string,
+        Phone?: string,
+        Instagram?: string
+    }
 }
 
-export default function OfficerCard({ name, icon, role, bio}: OfficerCardProps){
+export default function OfficerCard({ name, icon, role, bio, contact}: OfficerCardProps){
     return <div className="flex flex-col justify-center items-center pb-10">
         <div className="md:border-[0.75rem] border-solid border-[1rem] relative 
         top-20 z-2 border-keyblue-800 size-70 md:size-40 overflow-hidden
@@ -19,11 +25,16 @@ export default function OfficerCard({ name, icon, role, bio}: OfficerCardProps){
         </div>
         <div className="text-center border-solid border-[1rem] 
                         md:border-[0.75rem] border-keyblue-800 rounded-[3rem] w-160 
-                        md:w-100 p-12 md:p-4 md:pb-0 pt-20 md:pt-20 m-auto h-250 md:h-128 flex 
+                        md:w-100 p-12 md:p-4 md:pb-0 pt-20 md:pt-20 m-auto h-275 md:h-153 flex 
                         flex-col gap-y-2"
                         >
             <h4 className="text-6xl md:text-3xl">{name}</h4>
             <h3 className="text-5xl md:text-2xl">{role}</h3>
+
+            <div className="flex gap-x-3 justify-center">
+                {contact && Object.entries(contact).map(([type, value], idx)=><Contact type={type as types} value={value} key={`${type}-${value}-${idx}`}/>)}
+            </div>
+
             <p className="text-4xl md:text-lg break-words">{bio}</p>
         </div>
     </div>

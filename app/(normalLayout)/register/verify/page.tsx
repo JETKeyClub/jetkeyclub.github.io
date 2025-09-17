@@ -12,14 +12,14 @@ export default function Verify(){
         getEmailByCookies().then(em=>setEmail(em));
     },[])
 
-    function onSubmit(prev: any, curr: FormData){
+    function onSubmit(){
         if(useEmail)
             return resendVerificationEmail(useEmail);
         else
             return {}
     }
 
-    const [ state, action, isPending ] = useActionState(onSubmit, {})
+    const [ _, action, isPending ] = useActionState(onSubmit, {})
 
     return (
 

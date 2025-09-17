@@ -1,6 +1,5 @@
-import PDFDisplayer from "@/components/PDFDisplayer/PDFDisplayer";
-import BlogPost, {BlogPostProps} from "@/components/BlogPost/BlogPost";
-
+import  {BlogPostProps} from "@/types";
+import BlogPost from "@/components/BlogPost/BlogPost";
 // interface BlogPostProps{
 //     title: string;
 //     coverImage: string;

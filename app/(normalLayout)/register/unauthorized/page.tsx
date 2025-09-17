@@ -1,5 +1,4 @@
-import Link from "next/link";
-import SuspenseImage from "@/components/SuspenseImage/SuspenseImage";
+
 import ErrorPage from "@/components/Errors/ErrorPage";
 
 export default function RegisterPage(){

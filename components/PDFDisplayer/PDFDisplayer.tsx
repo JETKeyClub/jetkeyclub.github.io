@@ -1,17 +1,31 @@
 "use client"
 
-import { ComponentProps } from "react";
-import Image from "next/image";
-import { Viewer, Worker } from "@react-pdf-viewer/core";
-
+import { ComponentProps, useEffect, useRef, useState } from "react";
+import { getMDFileFromPost } from "@/actions/blog/Blog";
+import { clientUUID } from "@/types";
 
 interface PDFDisplayerProps extends ComponentProps<"iframe"> {
     src: string;
+    uuid: clientUUID;
 }
 
-export default function PDFDisplayer({src, ...props}: PDFDisplayerProps){
+export default function PDFDisplayer({src, uuid, className, ...props}: PDFDisplayerProps){
 
-    return (
-        <iframe src={`${src}#view=Fit&navpanes=0&toolbar=0`} className="w-[50vw] h-screen"/>
+    const iframeRef = useRef<HTMLIFrameElement>(null);
+    const [ useSrc, setSrc ] = useState<string>();
+
+    const [ useDimensions, setDimensions ] = useState<number[]>([11,11]);
+
+    useEffect(()=>{
+        getMDFileFromPost(uuid, src).then(e => {
+            setSrc(e);
+        });
+    }, [src]);
+
+    return (<div className="w-auto flex justify-center p-3">
+    
+        {useSrc && <iframe {...props} src={`${src}#view=Fit&navpanes=0&toolbar=1`} className={`w-[85vw] overflow-x-visible h-screen ${className}`}/>}
+    
+    </div>
     )
 }

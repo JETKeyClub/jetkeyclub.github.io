@@ -19,6 +19,10 @@
     --color-borderblue-500: #043874;
 }
 
+:root {
+    --zoom-amt: 0.95;
+}
+
 @layer components {
     p {
         @apply text-4xl lg:text-xl;
@@ -34,6 +38,19 @@
 
     input::-ms-reveal, input::-ms-clear {
         display: none;
+    }
+
+    iframe {
+        -ms-zoom: var(--zoom-amt);
+        zoom: var(--zoom-amt);
+        -moz-transform: scale(var(--zoom-amt));
+        transform: scale(var(--zoom-amt));
+        -moz-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -o-transform: scale(var(--zoom-amt));
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(var(--zoom-amt));
+        -webkit-transform-origin: 0 0;
     }
 
 }

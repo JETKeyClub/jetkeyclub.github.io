@@ -1,9 +1,8 @@
 "use client"
 
-import { BlogPostProps } from "@/components/BlogPost/BlogPost";
+import { BlogPostProps } from "@/types";
 import SuspenseImage from "@/components/SuspenseImage/SuspenseImage";
 import Tag from "@/components/BlogPost/Tag";
-import { Timestamp } from "next/dist/server/lib/cache-handlers/types";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { getCoverImage } from "@/actions/blog/Blog";
@@ -20,15 +19,18 @@ export default function BlogPostOverview( components: BlogPostOverviewProps){
     useEffect(()=>{
         components.props.then(result=>{
             setProps(result);
-            getCoverImage(result.uuid!).then(img=>{
+            if(result.uuid)
+            getCoverImage(result.uuid).then(img=>{
                 setCoverImage(img);
             })
         })
 
-    }, [])
+    }, [components.props])
 
     return (
-        <Link href={props ? `/blog/${props.id}` : ""}>
+        <>
+        
+        {props && <Link href={props ? `/blog/${props.id}` : ""}>
             <div className="flex border p-5 shadow-xl rounded-2xl group items-center gap-x-4">
                 {
                     props && coverImage && (
@@ -52,6 +54,8 @@ export default function BlogPostOverview( components: BlogPostOverviewProps){
                 )
                 }
             </div>
-        </Link>
+        </Link>}
+        
+        </>
     );
 }

@@ -34,15 +34,15 @@ export default function Opportunity({ image, description, link }: OpportunityPro
 
     const [ useDetails, setDetails ] = useState<[number[], number[]] | undefined>();
 
-    return <div className={`group w-[33.3%] relative`}
+    return <div className={`group w-[33.3%] h-150 relative`}
             >
                 <SuspenseImage 
                     src={image} 
-                    width={(useDetails ? useDetails[1][0] * 2 : 1600)}
-                    height={(useDetails ? useDetails[1][1] * 2 : 450)}
+                    // width={(useDetails ? useDetails[1][0] * 2 : 1600)}
+                    // height={(useDetails ? useDetails[1][1] * 2 : 450)}
                     alt={description}
                     // style={useDetails ? {width: `${useDetails[0][0]*0.5}rem`, height: `${useDetails[0][1]*0.5}rem`}: {}}
-                    className={`transition-[filter] duration-[250ms] w-full block object-cover
+                    className={`transition-[filter] duration-[250ms] h-150 w-full block object-cover
                          ${link && "cursor-pointer"} group-hover:blur-[4px] group-hover:brightness-75`}
                     onClick={()=>link && link != "" && window.open(link, "__blank")}
                 />

@@ -1,9 +1,11 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/utils/supabase/server'
-import ClientPage from '@/components/Dashboard/ClientPage'
 import { getNameByEmail, getRoleByEmail } from '@/actions/auth/actions'
+import { getPostsByName } from '@/actions/dashboard/DashboardActions'
+import BriefPostOverview from '@/components/Dashboard/Cards/BriefPostOverview'
+import PostCreationCard from '@/components/Editor/PostCreationCard'
 
-export default async function PrivatePage() {
+export default async function Dashboard() {
   const supabase = await createClient()
 
   const { data, error } = await supabase.auth.getUser()
@@ -12,11 +14,11 @@ export default async function PrivatePage() {
   }
   const fullName = await getNameByEmail(data.user.email!);
   const role = await getRoleByEmail(data.user.email!);
+  const posts = await Promise.all(await getPostsByName(fullName));
   
   return (<>
-  
-    {data.user.email && <ClientPage email={data.user.email!} name={fullName} role={role}/>}
-  
+    <PostCreationCard fullName={fullName}/>
+    <BriefPostOverview posts={posts}/>
   </>
   )
  

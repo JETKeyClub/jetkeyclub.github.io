@@ -166,7 +166,7 @@ export async function getNameByEmail(email: string){
 }
 
 export async function forgotPassword(email: string){
-  const res = await supabase.auth.resetPasswordForEmail(email, {
+  await supabase.auth.resetPasswordForEmail(email, {
       redirectTo: `${process.env.NEXT_PUBLIC_URL}/dashboard`
   })
 }
@@ -174,3 +174,4 @@ export async function forgotPassword(email: string){
 export async function getRoleByEmail(email: string){
   return (await database<{role: string}[]>`SELECT role FROM roles WHERE email=${email}`)[0].role;
 }
+

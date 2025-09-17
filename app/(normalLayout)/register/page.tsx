@@ -1,6 +1,5 @@
 "use client"
 
-import { login, signup } from '@/actions/auth/actions';
 import SignIn from '@/components/AuthForm/SignIn';
 import SignUp from "@/components/AuthForm/SignUp"
 import { useState } from 'react';

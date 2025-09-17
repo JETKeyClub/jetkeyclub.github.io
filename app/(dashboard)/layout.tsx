@@ -20,11 +20,9 @@ export default function RootLayout({
         className={`${PoppinsFont.className} antialiased flex`}
       >
         <NavBar/>
-        <div className="-z-10 w-full">
           <div className="w-full">
               {children}
           </div>
-        </div>
       </body>
     </html>
   );

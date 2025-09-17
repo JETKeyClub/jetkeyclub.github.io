@@ -1,7 +1,7 @@
 "use client"
 
-import { signup, userRegisterOutput } from "@/actions/auth/actions";
-import { useActionState, useState } from "react"
+import { signup } from "@/actions/auth/actions";
+import { useActionState } from "react"
 
 import { Dispatch, SetStateAction } from "react";
 import PasswordInput from "./PasswordInput";

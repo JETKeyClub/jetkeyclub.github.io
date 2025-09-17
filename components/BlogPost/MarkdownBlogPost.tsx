@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from "react";
 import MarkdownRenderer from "@/components/MarkdownRenderer/MarkdownRenderer";
+import { imageCache } from "@/types";
 
 interface MarkdownBlogPostProps{
     src: string;
+    imageCache?: imageCache
 }
 
-export default function MarkdownBlogPost({ src }: MarkdownBlogPostProps){
+export default function MarkdownBlogPost({ src, imageCache }: MarkdownBlogPostProps){
     const [ useText, setText ] = useState<string>("");
     
     useEffect(()=>{
@@ -16,10 +18,10 @@ export default function MarkdownBlogPost({ src }: MarkdownBlogPostProps){
             return res.text()
         })
         .then(text=>setText(text));
-    },[])
+    },[src])
 
     return <div>
-        <MarkdownRenderer>
+        <MarkdownRenderer imageCache={imageCache}>
             {useText}
         </MarkdownRenderer>
     </div>

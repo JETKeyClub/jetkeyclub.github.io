@@ -2,7 +2,6 @@ import NextAuth, { User } from "next-auth"
 import Credentials from "next-auth/providers/credentials"
 import { validateUser } from "./actions/auth/users";
 import { SupabaseAdapter } from "@next-auth/supabase-adapter";
-import { supabase } from "./actions/database/Database"; 
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: 

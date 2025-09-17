@@ -8,6 +8,10 @@ const PoppinsFont = Poppins({ subsets: ["latin"], weight: ["100", "200", "300", 
 export const metadata: Metadata = {
   title: "THS Key Club",
   description: "Key Club provides opportunities to get involved in your school and community. You'll meet new people with common interests and make new, life-long friends!",
+  icons: {
+    icon: "/Assets/KeyClubLogo.webp",
+    apple: "/Assets/KeyClubLogo.webp"
+  }
 };
 
 export default function RootLayout({

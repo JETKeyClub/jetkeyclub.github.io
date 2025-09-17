@@ -7,7 +7,7 @@ import { IconType } from "react-icons";
 import { BlogTags } from "@/types";
 
 
-const tagMap = new Map<BlogTags, [IconType, string]>([
+export const tagMap = new Map<BlogTags, [IconType, string]>([
     ["Newsletter", [BsNewspaper, "bg-blue-500"]],
     ["Announcement", [FaBullhorn, "bg-orange-500"]],
     ["Info", [HiQuestionMarkCircle, "bg-yellow-500"]],
@@ -20,7 +20,7 @@ export default function Tag({ tag }: { tag: BlogTags}){
     const [ Icon, bgColor ] = tagMap.get(tag)||[HiQuestionMarkCircle||"bg-skyblue-500"];
 
     return (
-        <div className={`select-none flex justify-center items-center gap-x-2 text-white text-3xl lg:text-lg font-semibold p-5 py-3 lg:p-4 lg:py-2 rounded-2xl ${bgColor}`}>
+        <div className={`select-none flex justify-center items-center gap-x-2 text-white text-[150%] font-semibold p-5 py-3 lg:p-4 lg:py-2 rounded-2xl ${bgColor}`}>
         <Icon/>
         {tag}
     </div>

@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 "use client"
 
 import { useEffect, useState } from "react"
-import { fetchBlogPosts, getCoverImage } from "@/actions/blog/Blog"
+import { fetchBlogPosts } from "@/actions/blog/Blog"
 import BlogPostOverview from "@/components/BlostPostOverview/BlogPostOverview";
-import { BlogPostProps } from "../BlogPost/BlogPost";
+import { BlogPostProps } from "@/types";
 
 export default function BlogGallery(){
     
@@ -12,9 +14,9 @@ export default function BlogGallery(){
     useEffect(()=>{
         fetchBlogPosts().then(
             async (val)=>{
-                setBlogPosts(val.map(async post=> {
+                setBlogPosts(val.filter(e=>e !== undefined && e !== null).map(async (post, idx)=> {
                     if(post!=null)
-                    return <BlogPostOverview props={post as Promise<BlogPostProps>}/>
+                    return <BlogPostOverview key={`overview-${idx}`} props={post as Promise<BlogPostProps>}/>
                 }));
             }
         )
