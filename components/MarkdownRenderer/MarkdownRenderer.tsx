@@ -5,7 +5,7 @@ import React from "react"
 import Markdown from "react-markdown";
 import Link from "next/link";
 import { imageCache } from "@/types";
-import SuspenseImage from "../SuspenseImage/SuspenseImage";
+import SuspenseImage from "@/components/SuspenseImage/SuspenseImage";
 
 export default function MarkdownRenderer({ children, imageCache }: { children: React.ReactNode, imageCache?: imageCache}){
         

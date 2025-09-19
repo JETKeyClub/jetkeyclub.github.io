@@ -2,9 +2,9 @@
 
 import { login } from "@/actions/auth/actions";
 import { useActionState } from "react"
-import Error from "./Error";
+import Error from "@/components/AuthForm/Error";
 import { Dispatch, SetStateAction } from "react";
-import PasswordInput from "./PasswordInput";
+import PasswordInput from "@/components/AuthForm/PasswordInput";
 
 type SignInProps = {
     dispatch:  Dispatch<SetStateAction<"login" | "register">>

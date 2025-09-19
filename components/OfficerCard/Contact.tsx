@@ -5,7 +5,7 @@ import { MdEmail } from "react-icons/md";
 import { BsInstagram } from "react-icons/bs";
 import { IconType } from "react-icons";
 
-import { TooltipCard } from "../Tooltip/Tooltip";
+import { TooltipCard } from "@/components/Tooltip/Tooltip";
 
 export type types = "Phone"|"Email"|"Instagram";
 

@@ -3,7 +3,7 @@
 import React, { ReactElement } from "react";
 
 import { ComponentProps, Children } from "react";
-import { SuspenseImageProps } from "../SuspenseImage/SuspenseImage";
+import { SuspenseImageProps } from "@/components/SuspenseImage/SuspenseImage";
 
 type potentialSuspenseImage = ReactElement<SuspenseImageProps>
 

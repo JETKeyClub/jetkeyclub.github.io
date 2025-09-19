@@ -2,7 +2,7 @@
 
 import { BlogPostProps } from "@/types";
 import { useState, useRef, Dispatch, SetStateAction } from "react"
-import SaveBtn from "./SaveBtn";
+import SaveBtn from "@/components/Editor/SaveBtn";
 
 interface FileUploadProps {
     initialSrc: string;

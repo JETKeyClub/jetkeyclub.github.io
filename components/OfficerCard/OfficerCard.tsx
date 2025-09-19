@@ -1,5 +1,5 @@
 import SuspenseImage from "@/components/SuspenseImage/SuspenseImage"
-import Contact, { types } from "./Contact"
+import Contact, { types } from "@/components/OfficerCard/Contact"
 
 interface OfficerCardProps {
     name: string,

@@ -1,10 +1,10 @@
 "use client"
 
 import { BlogPostProps, BlogPostType, BlogTags } from "@/types";
-import Tag, { tagMap } from "../BlogPost/Tag";
+import Tag, { tagMap } from "@/components/BlogPost/Tag";
 import { useState, Dispatch, SetStateAction } from "react";
-import SaveBtn from "./SaveBtn";
-import { updateInformation } from "./Filesystem/FileFix";
+import SaveBtn from "@/components/Editor/SaveBtn";
+import { updateInformation } from "@/components/Editor/Filesystem/FileFix";
 
 interface HeaderInformationProps {
     id: number;

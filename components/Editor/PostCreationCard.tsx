@@ -4,7 +4,7 @@ import { BlogPostType } from "@/types";
 import { useState } from "react";
 
 import { MdCancel } from "react-icons/md";
-import SaveBtn from "./SaveBtn";
+import SaveBtn from "@/components/Editor/SaveBtn";
 import { createTemplate } from "@/actions/blog/Blog";
 import { redirect } from "next/navigation";
 

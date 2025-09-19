@@ -5,14 +5,14 @@
 import { redirect, useSearchParams } from "next/navigation";
 import { getBlogPostById, getImageCache } from "@/actions/blog/Blog";
 import { useState, useEffect } from "react";
-import MarkdownRenderer from "../MarkdownRenderer/MarkdownRenderer";
+import MarkdownRenderer from "@/components/MarkdownRenderer/MarkdownRenderer";
 import { BlogPostProps, imageCache } from "@/types";
-import Filesystem from "./Filesystem/Filesystem";
-import { updateMarkdownFix } from "./Filesystem/FileFix";
-import SaveBtn from "./SaveBtn";
-import HeaderInformation from "./HeaderInformation";
-import PDFDisplayer from "../PDFDisplayer/PDFDisplayer";
-import FileUpload from "./FileUpload";
+import Filesystem from "@/components/Editor/Filesystem/Filesystem";
+import { updateMarkdownFix } from "@/components/Editor/Filesystem/FileFix";
+import SaveBtn from "@/components/Editor/SaveBtn";
+import HeaderInformation from "@/components/Editor/HeaderInformation";
+import PDFDisplayer from "@/components/PDFDisplayer/PDFDisplayer";
+import FileUpload from "@/components/Editor/FileUpload";
 
 
 interface EditorProps {

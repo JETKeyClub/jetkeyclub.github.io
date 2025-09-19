@@ -3,9 +3,9 @@
 import { clientUUID, imageCache } from "@/types";
 import { useRef, useState } from "react";
 import { uploadImageFix } from "./FileFix";
-import FileCard from "./FileCard";
-import ImagePreview from "./ImagePreview";
-import SaveBtn from "../SaveBtn";
+import FileCard from "@/components/Editor/Filesystem/FileCard";
+import ImagePreview from "@/components/Editor/Filesystem/ImagePreview";
+import SaveBtn from "@/components/Editor/SaveBtn";
 
 interface FilesystemProps {
     imageCache: imageCache;

@@ -4,7 +4,7 @@ import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 import { createClient } from '@/utils/supabase/server'
 import { SignUpWithPasswordCredentials } from '@supabase/supabase-js'
-import { database, supabase } from '../database/Database'
+import { database, supabase } from '@/actions/database/Database'
 import * as zod from "zod";
 import { cookies } from 'next/headers'
 

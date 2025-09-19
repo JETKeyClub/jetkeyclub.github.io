@@ -1,5 +1,5 @@
 import { BlogPostProps, clientUUID } from "@/types";
-import {getBlogPostById } from "../blog/Blog";
+import {getBlogPostById } from "@/actions/blog/Blog";
 import { database, supabase } from "@/actions/database/Database";
 
 interface BlogIdParser {

@@ -1,5 +1,5 @@
 import PDFDisplayer from "@/components/PDFDisplayer/PDFDisplayer";
-import Tag from "./Tag";
+import Tag from "@/components/BlogPost/Tag";
 import MarkdownBlogPost from "@/components/BlogPost/MarkdownBlogPost";
 
 import { BlogPostProps } from "@/types";
