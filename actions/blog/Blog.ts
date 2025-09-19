@@ -1,9 +1,9 @@
+ 
 "use server"
 
 import { database, supabase } from "@/actions/database/Database";
 import { BlogPostProps, imageCache, PostTemplate } from "@/types";
 import { randomUUID, UUID } from "crypto";
-import { BlogPostTypeEnum } from "@/types";
 
 const blogBucket = supabase.storage.from("blog");
 
@@ -96,7 +96,7 @@ export async function renderMarkdownPost(post: BlogPostProps): Promise<BlogPostP
 
 export async function renderPDFPost(post: BlogPostProps): Promise<BlogPostProps> {
     post.type = "pdf";
-    post.args.path = post.args.content,
+    post.args.path = post.args.content;
     post.args.content = supabase.storage.from("blog").getPublicUrl(`${post.uuid}/${post.args.content}`).data.publicUrl;
 
     return post;
@@ -108,11 +108,11 @@ export async function deleteKeyFromCache(id: number){
     cache.delete(id);
 }
 
-export async function getBlogPostById(id: number, publicTo: boolean): Promise<BlogPostProps|null> {
+export async function getBlogPostById(id: number, isPublic: boolean): Promise<BlogPostProps|null> {
 
     const post = (await database<BlogPostProps[]>`SELECT * FROM blog WHERE id=${id}`)[0];
 
-    // if(post===null || post === undefined || (publicTo && !post.visible)) return post;
+    if(isPublic && !post.visible) return null;
 
     const parsedPost = await renderMarkdownPost(post);
     cache.set(id, parsedPost);

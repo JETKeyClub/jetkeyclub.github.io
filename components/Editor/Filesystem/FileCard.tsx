@@ -2,16 +2,13 @@
 
 import clsx from "clsx";
 
-import { FileImage, imageCache } from "@/types";
+import { FileImage } from "@/types";
 import { Dispatch, SetStateAction, useState } from "react";
 
 import { renameImageFix, deleteImageFix } from "./FileFix";
 
 import { FaTrash } from "react-icons/fa";
 import { HiPencilSquare } from "react-icons/hi2";
-import { projectGetSourceMapSync } from "next/dist/build/swc/generated-native";
-import { getBlogPostById, getImageCache, renderMarkdownPost } from "@/actions/blog/Blog";
-
 interface FileCardProps extends FileImage {
     refreshCache: ()=>void;
     setImage: Dispatch<SetStateAction<{link: string, src: string}|undefined>>;
@@ -52,7 +49,7 @@ export default function FileCard(props: FileCardProps){
                 <FaTrash className="transition-colors hover:text-red-400 cursor-pointer size-5" onClick={()=>{
                     if(props.type==='server')
                         deleteImageFix(`${props.uuid}/${useName}`)
-                        .then(_=>props.refreshCache())
+                        .then(()=>props.refreshCache())
                 }}/>
             
             </div>

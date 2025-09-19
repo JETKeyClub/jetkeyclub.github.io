@@ -1,4 +1,4 @@
-"use client"
+ "use client"
 
 import { getEmailByCookies, resendVerificationEmail } from "@/actions/auth/actions";
 import { useActionState, useEffect } from "react"
@@ -18,8 +18,7 @@ export default function Verify(){
         else
             return {}
     }
-
-    const [ _, action, isPending ] = useActionState(onSubmit, {})
+    const [ , action, isPending ] = useActionState(onSubmit, {})
 
     return (
 

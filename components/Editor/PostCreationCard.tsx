@@ -1,7 +1,6 @@
 "use client"
 
 import { BlogPostType } from "@/types";
-import { Redirect } from "next";
 import { useState } from "react";
 
 import { MdCancel } from "react-icons/md";

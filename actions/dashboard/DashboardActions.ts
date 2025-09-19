@@ -6,7 +6,7 @@ interface BlogIdParser {
     id: number;
 }
 export type BlogType = Promise<BlogPostProps>[];
-const cache: Map<string, BlogType> = new Map<string, BlogType>();
+// const cache: Map<string, BlogType> = new Map<string, BlogType>();
 
 export async function getPostsByName(name: string){
     try{
@@ -24,16 +24,6 @@ export async function getPostsByName(name: string){
 //     return (await database`SELECT COUNT(*) FROM blog WHERE ${name}=ANY(authors) OR uploaded_by=${name} AND id=${id}`).length > 0;
 // }
 
-export async function deleteImage(src: string): Promise<string>{
-    const { error} = await supabase.storage
-    .from("blog")
-    .remove([src]);
-
-    if(error) throw error;
-
-    return "File Deleted Sucessfully!";
-}
-
 export async function deletePost(id: number, uuid: clientUUID){
     try{
         await supabase.storage.from("blog")
@@ -45,6 +35,16 @@ export async function deletePost(id: number, uuid: clientUUID){
     catch{
         return "An occured happened";
     }
+}
+
+export async function deleteImage(src: string): Promise<string>{
+    const { error} = await supabase.storage
+    .from("blog")
+    .remove([src]);
+
+    if(error) throw error;
+
+    return "File Deleted Sucessfully!";
 }
 
 export async function renameImage( src: string, to: string){
@@ -70,7 +70,6 @@ export async function updateMarkdownFile(post: Pick<BlogPostProps, "args"|"uuid"
    
     const file = new File([content], post.args.path!, {type: post.type === "markdown" ? "text/plain" : "application/pdf"});
     
-    if(post.type === "markdown")
     await supabase.storage.from("blog")
     .update(`${post.uuid}/${post.args.path}`, file)
 

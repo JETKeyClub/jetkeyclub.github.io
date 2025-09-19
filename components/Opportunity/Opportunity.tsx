@@ -1,10 +1,10 @@
 "use client"
 
 import SuspenseImage from "@/components/SuspenseImage/SuspenseImage";
-import getBaseDimensions from "@/components/Opportunity/getDetails";
-import { useEffect, useState } from "react";
+// import getBaseDimensions from "@/components/Opportunity/getDetails";
+// import { useEffect, useState } from "react";
 
-const WANTED_HEIGHT = 25;
+// const WANTED_HEIGHT = 25;
 
 interface OpportunityProps {
     image: string,
@@ -13,26 +13,26 @@ interface OpportunityProps {
 }
 
 
-function minimize(dimensions: number[]): [number[], number[]]{
-    const REM = Number.parseFloat(window.getComputedStyle(document.querySelector("html")!).fontSize);
+// function minimize(dimensions: number[]): [number[], number[]]{
+//     const REM = Number.parseFloat(window.getComputedStyle(document.querySelector("html")!).fontSize);
 
-    const inRemScale = dimensions.map(e => e/REM);
-    const scaleFactor = WANTED_HEIGHT/inRemScale[1];
+//     const inRemScale = dimensions.map(e => e/REM);
+//     const scaleFactor = WANTED_HEIGHT/inRemScale[1];
     
-    const scaledRem = inRemScale.map(e => e*scaleFactor);
-    const scaledPixel =  scaledRem.map(e=>Math.ceil(e*REM));
+//     const scaledRem = inRemScale.map(e => e*scaleFactor);
+//     const scaledPixel =  scaledRem.map(e=>Math.ceil(e*REM));
 
-    return [scaledRem, scaledPixel];
-}
+//     return [scaledRem, scaledPixel];
+// }
 
 export default function Opportunity({ image, description, link }: OpportunityProps){
-    useEffect(()=>{
-        (async () => {
-            setDetails(minimize(await getBaseDimensions(image)));
-        })();
-    }, [image]);
+    // useEffect(()=>{
+    //     (async () => {
+    //         setDetails(minimize(await getBaseDimensions(image)));
+    //     })();
+    // }, [image]);
 
-    const [ useDetails, setDetails ] = useState<[number[], number[]] | undefined>();
+    // const [ useDetails, setDetails ] = useState<[number[], number[]] | undefined>();
 
     return <div className={`group w-[33.3%] h-150 relative`}
             >

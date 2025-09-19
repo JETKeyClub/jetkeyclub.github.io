@@ -1,6 +1,6 @@
 "use client"
 
-import { ComponentProps, useEffect, useRef, useState } from "react";
+import { ComponentProps, useEffect, useState } from "react";
 import { getMDFileFromPost } from "@/actions/blog/Blog";
 import { clientUUID } from "@/types";
 
@@ -11,16 +11,13 @@ interface PDFDisplayerProps extends ComponentProps<"iframe"> {
 
 export default function PDFDisplayer({src, uuid, className, ...props}: PDFDisplayerProps){
 
-    const iframeRef = useRef<HTMLIFrameElement>(null);
     const [ useSrc, setSrc ] = useState<string>();
-
-    const [ useDimensions, setDimensions ] = useState<number[]>([11,11]);
 
     useEffect(()=>{
         getMDFileFromPost(uuid, src).then(e => {
             setSrc(e);
         });
-    }, [src]);
+    }, [src, uuid]);
 
     return (<div className="w-auto flex justify-center p-3">
     

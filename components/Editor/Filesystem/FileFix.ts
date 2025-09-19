@@ -8,7 +8,6 @@ const renameImageFix = renameImage.bind(null);
 const deleteImageFix = deleteImage.bind(null);
 const uploadImageFix = uploadImage.bind(null);
 const updateMarkdownFix = updateMarkdownFile.bind(null);
-const updateInformationFix = updateInformation.bind(null);
 
 
 export { renameImageFix, deleteImageFix, uploadImageFix, updateMarkdownFix, updateInformation, deletePost}

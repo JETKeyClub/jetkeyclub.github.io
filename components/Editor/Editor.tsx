@@ -6,7 +6,7 @@ import { redirect, useSearchParams } from "next/navigation";
 import { getBlogPostById, getImageCache } from "@/actions/blog/Blog";
 import { useState, useEffect } from "react";
 import MarkdownRenderer from "../MarkdownRenderer/MarkdownRenderer";
-import { BlogPostProps, BlogPostType, imageCache } from "@/types";
+import { BlogPostProps, imageCache } from "@/types";
 import Filesystem from "./Filesystem/Filesystem";
 import { updateMarkdownFix } from "./Filesystem/FileFix";
 import SaveBtn from "./SaveBtn";
@@ -70,12 +70,12 @@ export default function Editor({postIds}: EditorProps){
                         promise={async ()=>{
                             console.log(useContents);
 
-                            usePost&& await updateMarkdownFix(usePost, useContents)
+                            if(usePost) await updateMarkdownFix(usePost, useContents)
                         }}/>
                     </div>
                     <div className="border-b-[1px] py-1 border-gray-400"/> 
                     {usePost?.type === "markdown" && (<textarea className="pl-3 pt-3 w-full h-screen focus:border-0" value={useContents} onChange={(e)=>setContents(e.target.value )}/>)}
-                    {usePost?.type === "pdf" && <FileUpload initialSrc={usePost?.args.path!} setPost={setPost}/>}
+                    {usePost?.type === "pdf" && usePost.args.path && <FileUpload initialSrc={usePost?.args.path} setPost={setPost}/>}
                 </section>
                 <section className="w-[75%] bg-white">
                     
@@ -91,7 +91,7 @@ export default function Editor({postIds}: EditorProps){
                                         {useContents}
                                     </MarkdownRenderer>
                                 ) : usePost.type === "pdf" && usePost.args.content !== "" ? (
-                                    <PDFDisplayer src={usePost.args.content}/>
+                                    <PDFDisplayer uuid={usePost.uuid!} src={usePost.args.content}/>
                                 ): <></>
                             )
                         }
