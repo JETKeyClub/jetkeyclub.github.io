@@ -123,7 +123,6 @@ export async function signup(prevData: userRegisterOutput, formData: FormData): 
     options: {
       emailRedirectTo: `${process.env.NEXT_PUBLIC_URL}/dashboard`
     }
-    
   }
 
 
