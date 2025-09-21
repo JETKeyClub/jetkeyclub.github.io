@@ -16,9 +16,6 @@ export default function SignIn({ dispatch }: SignInProps){
 
     const [ state, action, isPending ] = useActionState(signup, {});
 
-    console.log(state.messages);
-    console.log(state.errors);
-
     return (
         <form 
         action={action}

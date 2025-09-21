@@ -1,4 +1,4 @@
-import { BlogPostProps, clientUUID } from "@/types";
+import { BlogPostProps, clientUUID, role, UserTemplate } from "@/types";
 import {getBlogPostById } from "@/actions/blog/Blog";
 import { database, supabase } from "@/actions/database/Database";
 
@@ -102,4 +102,20 @@ export async function updateInformation(id:number, post: Pick<BlogPostProps, "ti
     visible=${post.visible || false},
     type=${post.type}
     WHERE id=${id}`
+}
+
+export async function getAllUsers(){
+    return await database<UserTemplate[]>`SELECT * FROM roles`;
+}
+
+export async function addUser(email: string, role: role){
+    await database`INSERT INTO roles (email, role) VALUES (${email}, ${role})`;
+}
+
+export async function deleteUser(email: string){
+    await database`DELETE FROM roles WHERE email=${email}`;
+}
+
+export async function updateRole(email: string, role: role){
+    await database`UPDATE roles SET role=${role} WHERE email=${email}`;
 }

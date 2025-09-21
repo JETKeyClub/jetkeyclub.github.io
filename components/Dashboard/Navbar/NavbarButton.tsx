@@ -5,13 +5,24 @@ import { IconType } from "react-icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { CgHome } from "react-icons/cg";
+import { FaFaceLaugh } from "react-icons/fa6";
+import { CiSettings } from "react-icons/ci";
+
 interface NavbarButtonProps {
     name: string,
-    link: string,
-    icon: IconType
+    link: string
 }
 
-export default function NavbarButton({ name, link, icon: Icon }: NavbarButtonProps){
+const iconMap = new Map<string, IconType>([
+    ["Home", CgHome],
+    ["Settings",CiSettings],
+    [ "Add Users", FaFaceLaugh]
+])
+
+export default function NavbarButton({ name, link }: NavbarButtonProps){
+
+    const Icon = iconMap.get(name)!;
     
     const isSelected = usePathname() === link;
     

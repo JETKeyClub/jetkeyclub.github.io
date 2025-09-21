@@ -24,5 +24,6 @@ export default function BlogGallery(){
     
     return <div className="p-10">
         {useBlogPosts || <p className="text-3xl font-bold">Loading</p>}
+        {useBlogPosts && useBlogPosts?.length < 1 && <p className="text-3xl font-bold">There are no blog posts right now. Please try again later.</p> }
     </div>
 }

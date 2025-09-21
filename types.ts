@@ -49,3 +49,10 @@ export type FileImage = {
 export type clientUUID =  `${string}-${string}-${string}-${string}-${string}`; //had to put this cuz clients can't have crypto library
 
 export type imageCache = {[key: string]: string};
+
+
+export type role = "default"|"admin";
+export interface UserTemplate {
+    email:string;
+    role: role;
+}
