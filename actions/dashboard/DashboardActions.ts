@@ -2,6 +2,8 @@ import { BlogPostProps, clientUUID } from "@/types";
 import {getBlogPostById } from "@/actions/blog/Blog";
 import { database, supabase } from "@/actions/database/Database";
 
+export const whiteSpacePattern: RegExp = /\s/g;
+
 interface BlogIdParser {
     id: number;
 }
@@ -56,8 +58,9 @@ export async function renameImage( src: string, to: string){
 }
 
 export async function uploadImage(uuid: clientUUID, file: File){
+
     const { error } = await supabase.storage.from("blog").upload(
-        `${uuid}/${file.name}`, file
+        `${uuid}/${file.name.replace(" ", "%20")}`, file
     )
 
     if(error) throw error;
@@ -80,7 +83,7 @@ export async function updateMarkdownFile(post: Pick<BlogPostProps, "args"|"uuid"
         post.args.content = post.args.path || "src.pdf";
 
         await supabase.storage.from("blog")
-        .upload(`${post.uuid}/${post.args.content}`, post.file!);
+        .upload(`${post.uuid}/${post.args.content.replaceAll(whiteSpacePattern, "_")}`, post.file!);
     }
 
     await database`UPDATE blog SET args=${database.json(args)}, type=${post.type} WHERE id=${post.id}`
@@ -89,12 +92,14 @@ export async function updateMarkdownFile(post: Pick<BlogPostProps, "args"|"uuid"
 
 }
 
-export async function updateInformation(id:number, post: Pick<BlogPostProps, "title"|"authors"|"date"|"tags"|"description">){
+export async function updateInformation(id:number, post: Pick<BlogPostProps, "title"|"authors"|"date"|"tags"|"description"|"visible"|"type">){
     await database`UPDATE blog SET 
     title=${post.title},
     authors=${post.authors},
     date=${post.date},
     tags=${post.tags}, 
-    description=${post.description}
+    description=${post.description},
+    visible=${post.visible || false},
+    type=${post.type}
     WHERE id=${id}`
 }

@@ -15,7 +15,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         authorize: async (credentials) => {
 
             
-            const {data, error} = await supabase.auth.signInWithPassword({
+            const {data,error} = await supabase.auth.signInWithPassword({
               email: credentials.email as string,
               password: credentials.password as string
             })
@@ -23,6 +23,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             const user = data.user;
 
             if(!user) throw new Error("Invalid credentials.");
+            if(error) throw new Error("Something went wrong!")
 
             const name = await database`SELECT name FROM emailtoname WHERE email=${credentials.email as string}`;
 

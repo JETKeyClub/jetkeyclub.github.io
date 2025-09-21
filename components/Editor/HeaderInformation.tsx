@@ -10,11 +10,10 @@ interface HeaderInformationProps {
     id: number;
     post: BlogPostProps,
     setPost:  Dispatch<SetStateAction<BlogPostProps | undefined>>;
-    usePost: BlogPostProps | undefined;
 }
 
 
-export default function HeaderInformation({ post, setPost, usePost }: HeaderInformationProps){
+export default function HeaderInformation({ post, setPost }: HeaderInformationProps){
 
     const [ useTitle, setTitle ] = useState<string>(post.title || "");
     const [ useDescription, setDescription ] = useState<string>(post.description || "");
@@ -33,7 +32,7 @@ export default function HeaderInformation({ post, setPost, usePost }: HeaderInfo
             authors: useAuthors,
             date: post.date,
             visible: useVisible,
-            type: usePost?.type
+            type: post.type
         };
 
         await updateInformation(post.id!, info);
@@ -96,11 +95,11 @@ export default function HeaderInformation({ post, setPost, usePost }: HeaderInfo
             </div>
 
             <div className="flex my-3">
-                <button className={`p-3 text-3xl ${usePost?.type==="markdown" ? "bg-gray-500 hover:bg-gray-400" : "bg-gray-300 hover:bg-gray-200"}
+                <button className={`p-3 text-3xl ${post.type==="markdown" ? "bg-gray-500 hover:bg-gray-400" : "bg-gray-300 hover:bg-gray-200"}
                  transition-all border-[1px] border-gray-700`}
                 onClick={()=>setType("markdown")}
                 >Markdown</button>
-                <button className={`p-3 text-3xl ${usePost?.type==="pdf" ? "bg-gray-500 hover:bg-gray-400" : "bg-gray-300 hover:bg-gray-200"}
+                <button className={`p-3 text-3xl ${post.type==="pdf" ? "bg-gray-500 hover:bg-gray-400" : "bg-gray-300 hover:bg-gray-200"}
                 transition-all border-[1px] border-gray-700`}
                 onClick={()=>setType("pdf")}
                 >PDF</button>

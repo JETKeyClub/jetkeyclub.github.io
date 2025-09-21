@@ -16,6 +16,7 @@ export default function Tooltip({icon: Icon ,text, ...props}: TooltipProps){
     )
 }
 
+
 export function TooltipCard({ text }: { text: string}){
     return (
         <div className="absolute top-9 w-max border-[1px] py-1 px-3 rounded-md 

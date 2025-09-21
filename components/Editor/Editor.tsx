@@ -21,10 +21,7 @@ interface EditorProps {
 
 export default function Editor({postIds}: EditorProps){
     const file = useSearchParams().get("fileID");
-
-    console.log(postIds);
-    console.log(file)
-
+    
     if(file && postIds.indexOf(file)==-1) redirect("/dashboard");
     
 
@@ -56,7 +53,7 @@ export default function Editor({postIds}: EditorProps){
 
     return (
         <div className="pl-4">
-            {usePost && <HeaderInformation id={usePost.id!} post={usePost} setPost={setPost} usePost={usePost}/>}
+            {usePost && <HeaderInformation id={usePost.id!} post={usePost} setPost={setPost}/>}
             {
               usePost?.uuid &&  <Filesystem imageCache={useImageCache} refreshCache={refreshCache} uuid={usePost?.uuid}/>
             }

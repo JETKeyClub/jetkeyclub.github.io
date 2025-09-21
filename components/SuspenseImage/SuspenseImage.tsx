@@ -18,9 +18,9 @@ export default function SuspenseImage(props: SuspenseImageProps){
 
     useEffect(()=>{
         if(!props.src && !props.promise)
-            setLoadedImage("/assets/FileNotFound.png");
+            setLoadedImage("/Assets/FileNotFound.png");
         else if(props.promise)
-            props.promise.then(res=>setLoadedImage(res));
+            props.promise.then(res=>setLoadedImage(res)).catch(()=>setLoadedImage("/Assets/FileNotFound.png"));
         else if(props.src)
             setLoadedImage(props.src);
     }, [props.src, props.promise])

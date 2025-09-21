@@ -4,6 +4,7 @@
 import { database, supabase } from "@/actions/database/Database";
 import { BlogPostProps, imageCache, PostTemplate } from "@/types";
 import { randomUUID, UUID } from "crypto";
+import { whiteSpacePattern } from "@/actions/dashboard/DashboardActions";
 
 const blogBucket = supabase.storage.from("blog");
 
@@ -29,8 +30,8 @@ const blogBucket = supabase.storage.from("blog");
 // })
 
 export async function fetchBlogPosts(){
-    const count = await database`SELECT COUNT(*) AS POSTS FROM blog`;
-    return (new Array(count)).map((_, idx)=> getBlogPostById(idx+1, true));
+    const blogPosts = await database`SELECT id FROM blog`;
+    return blogPosts.map((id)=> getBlogPostById(id.id, true));
 }
 
 export async function createTemplate(post: PostTemplate){
@@ -82,7 +83,7 @@ export async function getImageCache(post: Pick<BlogPostProps, "uuid">): Promise<
 }
 
 export async function getMDFileFromPost(uuid: UUID, content: string){
-    return blogBucket.getPublicUrl(`${uuid}/${content}`).data.publicUrl;
+    return blogBucket.getPublicUrl(`${uuid}/${content.replaceAll(whiteSpacePattern, "_")}`).data.publicUrl;
 }
 
 export async function renderMarkdownPost(post: BlogPostProps): Promise<BlogPostProps>{
@@ -97,7 +98,7 @@ export async function renderMarkdownPost(post: BlogPostProps): Promise<BlogPostP
 export async function renderPDFPost(post: BlogPostProps): Promise<BlogPostProps> {
     post.type = "pdf";
     post.args.path = post.args.content;
-    post.args.content = supabase.storage.from("blog").getPublicUrl(`${post.uuid}/${post.args.content}`).data.publicUrl;
+    post.args.content = supabase.storage.from("blog").getPublicUrl(`${post.uuid}/${post.args.content.replaceAll(whiteSpacePattern, "_")}`).data.publicUrl;
 
     return post;
 }

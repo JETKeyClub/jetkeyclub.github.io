@@ -18,6 +18,7 @@ export default function BlogPostOverview( components: BlogPostOverviewProps){
 
     useEffect(()=>{
         components.props.then(result=>{
+            if(result === null) return;
             setProps(result);
             if(result.uuid)
             getCoverImage(result.uuid).then(img=>{

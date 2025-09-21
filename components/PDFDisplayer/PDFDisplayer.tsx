@@ -19,6 +19,7 @@ export default function PDFDisplayer({src, uuid, className, ...props}: PDFDispla
         });
     }, [src, uuid]);
 
+
     return (<div className="w-auto flex justify-center p-3">
     
         {useSrc && <iframe {...props} src={`${src}#view=Fit&navpanes=0&toolbar=1`} className={`w-[85vw] overflow-x-visible h-screen ${className}`}/>}

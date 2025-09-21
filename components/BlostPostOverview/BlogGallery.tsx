@@ -23,6 +23,6 @@ export default function BlogGallery(){
     }, [])
     
     return <div className="p-10">
-        {useBlogPosts}
+        {useBlogPosts || <p className="text-3xl font-bold">Loading</p>}
     </div>
 }

@@ -31,7 +31,7 @@ export default function FileCard(props: FileCardProps){
         }
             onClick={()=>props.setImage({link: props.link, src: props.src})}
         >
-            {!useInRename && <p className="text-[115%] select-none">{useName}</p>||
+            {!useInRename && <p className="text-[115%] text-wrap w-full select-none overflow-x-scroll">{useName}</p>||
             <input onChange={e=>setName(e.target.value)} className="text-[115%]" autoFocus value={useName} onKeyDown={e=>{
                 if(e.code === "Enter") {
                     setInRename(false); 
@@ -40,7 +40,7 @@ export default function FileCard(props: FileCardProps){
             }}/>
             }
 
-            <div className="flex gap-x-2 items-center">
+            <div className="flex gap-x-2 items-center flex-wrap text-wrap">
 
                 <HiPencilSquare className="transition-colors hover:text-white cursor-pointer size-6" onClick={()=>{
                     setInRename(true);
