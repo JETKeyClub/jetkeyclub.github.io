@@ -5,13 +5,9 @@ import SuspenseImage from "@/components/SuspenseImage/SuspenseImage"
 import Card from "@/components/Card/Card"
 import OpportunityJSON from "@/public/Assets/Opportunities/Opportunities.json"
 import Opportunity from "@/components/Opportunity/Opportunity"
-import { redirect , useSearchParams } from "next/navigation"
 import { Suspense } from "react"
 
 export default function Home(){
-
-   const params =  useSearchParams();
-   if(params.get("code")) redirect("/dashboard")
 
     return (
     <>

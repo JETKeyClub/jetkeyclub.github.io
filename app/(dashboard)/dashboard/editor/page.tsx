@@ -3,7 +3,7 @@ import { getNameByEmail } from "@/actions/auth/actions"
 import Editor from "@/components/Editor/Editor"
 import { createClient } from "@/utils/supabase/server"
 import { redirect } from "next/navigation"
-
+import { Suspense } from "react"
 export default async function Page(){
     const supabase = await createClient()
 
@@ -17,7 +17,9 @@ export default async function Page(){
 
     return (
         <div>
-            <Editor postIds={posts}/>
+            <Suspense fallback={<></>}>
+                <Editor postIds={posts}/>
+            </Suspense>
         </div>
     )
 }
