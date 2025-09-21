@@ -13,7 +13,7 @@ import SaveBtn from "@/components/Editor/SaveBtn";
 import HeaderInformation from "@/components/Editor/HeaderInformation";
 import PDFDisplayer from "@/components/PDFDisplayer/PDFDisplayer";
 import FileUpload from "@/components/Editor/FileUpload";
-
+import { Suspense } from "react";
 
 interface EditorProps {
     postIds: any[]
@@ -52,49 +52,53 @@ export default function Editor({postIds}: EditorProps){
     }
 
     return (
-        <div className="pl-4">
-            {usePost && <HeaderInformation id={usePost.id!} post={usePost} setPost={setPost}/>}
-            {
-              usePost?.uuid &&  <Filesystem imageCache={useImageCache} refreshCache={refreshCache} uuid={usePost?.uuid}/>
-            }
+        <>
+            <Suspense fallback={<></>}>
+                <div className="pl-4">
+                    {usePost && <HeaderInformation id={usePost.id!} post={usePost} setPost={setPost}/>}
+                    {
+                    usePost?.uuid &&  <Filesystem imageCache={useImageCache} refreshCache={refreshCache} uuid={usePost?.uuid}/>
+                    }
 
-            <div className="flex gap-x-[1px] bg-gray-400 border-t-[1px] border-t-gray-400">
-                <section className="w-[75%] bg-white">
-                    <div className="flex gap-x-6 items-center">
-                        <h2 className="text-6xl font-bold pl-3">Editor</h2>
-                        <SaveBtn 
-                        text="Save"
-                        promise={async ()=>{
-                            console.log(useContents);
+                    <div className="flex gap-x-[1px] bg-gray-400 border-t-[1px] border-t-gray-400">
+                        <section className="w-[75%] bg-white">
+                            <div className="flex gap-x-6 items-center">
+                                <h2 className="text-6xl font-bold pl-3">Editor</h2>
+                                <SaveBtn 
+                                text="Save"
+                                promise={async ()=>{
+                                    console.log(useContents);
 
-                            if(usePost) await updateMarkdownFix(usePost, useContents)
-                        }}/>
+                                    if(usePost) await updateMarkdownFix(usePost, useContents)
+                                }}/>
+                            </div>
+                            <div className="border-b-[1px] py-1 border-gray-400"/> 
+                            {usePost?.type === "markdown" && (<textarea className="pl-3 pt-3 w-full h-screen focus:border-0" value={useContents} onChange={(e)=>setContents(e.target.value )}/>)}
+                            {usePost?.type === "pdf" && usePost.args.path && <FileUpload initialSrc={usePost?.args.path} setPost={setPost}/>}
+                        </section>
+                        <section className="w-[75%] bg-white">
+                            
+                            <h2 className="text-6xl font-bold pl-3">Preview</h2>
+                            <div className="border-b-[1px] py-1 border-gray-400"/> 
+                            
+                            <div className="w-full h-screen overflow-y-scroll">
+
+                                {
+                                    usePost && (
+                                        usePost.type === "markdown" ? (
+                                            <MarkdownRenderer imageCache={useImageCache}>
+                                                {useContents}
+                                            </MarkdownRenderer>
+                                        ) : usePost.type === "pdf" && usePost.args.content !== "" ? (
+                                            <PDFDisplayer uuid={usePost.uuid!} src={usePost.args.content}/>
+                                        ): <></>
+                                    )
+                                }
+                            </div>
+                        </section>
                     </div>
-                    <div className="border-b-[1px] py-1 border-gray-400"/> 
-                    {usePost?.type === "markdown" && (<textarea className="pl-3 pt-3 w-full h-screen focus:border-0" value={useContents} onChange={(e)=>setContents(e.target.value )}/>)}
-                    {usePost?.type === "pdf" && usePost.args.path && <FileUpload initialSrc={usePost?.args.path} setPost={setPost}/>}
-                </section>
-                <section className="w-[75%] bg-white">
-                    
-                    <h2 className="text-6xl font-bold pl-3">Preview</h2>
-                    <div className="border-b-[1px] py-1 border-gray-400"/> 
-                    
-                    <div className="w-full h-screen overflow-y-scroll">
-
-                        {
-                            usePost && (
-                                usePost.type === "markdown" ? (
-                                    <MarkdownRenderer imageCache={useImageCache}>
-                                        {useContents}
-                                    </MarkdownRenderer>
-                                ) : usePost.type === "pdf" && usePost.args.content !== "" ? (
-                                    <PDFDisplayer uuid={usePost.uuid!} src={usePost.args.content}/>
-                                ): <></>
-                            )
-                        }
-                    </div>
-                </section>
-            </div>
-        </div>
+                </div>
+            </Suspense>
+        </>
     )
 }
