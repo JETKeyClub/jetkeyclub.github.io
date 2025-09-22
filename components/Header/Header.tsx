@@ -26,6 +26,7 @@ export default function Header(){
             <HeaderBtn name="Officers" dispatch={setBurgerMenuToggle}/>
             <HeaderBtn name="Gallery" dispatch={setBurgerMenuToggle}/>
             <HeaderBtn name="Blog" dispatch={setBurgerMenuToggle}/>
+            <HeaderBtn name="Links" dispatch={setBurgerMenuToggle}/>
         </div>
     </header>
 }

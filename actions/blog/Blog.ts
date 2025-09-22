@@ -91,6 +91,7 @@ export async function renderMarkdownPost(post: BlogPostProps): Promise<BlogPostP
     post.args.imageCache = await getImageCache(post) || {};
     post.args.path = post.args.content;
     post.args.content = await getMDFileFromPost(post.uuid!, post.args.content);
+    post.authors = post.authors.filter(e=>e.length > 0);
     
     return post;
 }
@@ -99,6 +100,7 @@ export async function renderPDFPost(post: BlogPostProps): Promise<BlogPostProps>
     post.type = "pdf";
     post.args.path = post.args.content;
     post.args.content = supabase.storage.from("blog").getPublicUrl(`${post.uuid}/${post.args.content.replaceAll(whiteSpacePattern, "_")}`).data.publicUrl;
+    post.authors = post.authors.filter(e=>e.length > 0);
 
     return post;
 }
