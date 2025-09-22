@@ -13,7 +13,7 @@ export default async function NavBar(){
      redirect('/login')
     }
 
-    const role = await getRoleByEmail(data.user?.email!);
+    const role = data.user.email ? await getRoleByEmail(data.user?.email) : "default";
 
     return (
         <div 

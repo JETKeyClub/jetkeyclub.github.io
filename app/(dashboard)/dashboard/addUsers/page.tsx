@@ -14,7 +14,7 @@ export default async function Page(){
      redirect('/login')
     }
 
-    const role = await getRoleByEmail(data.user?.email!);
+    const role = data.user.email ? await getRoleByEmail(data.user?.email) : "deafult";
 
     if(role !== "admin") redirect("/dashboard");
 
